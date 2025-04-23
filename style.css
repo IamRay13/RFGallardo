@@ -5,7 +5,105 @@
     box-sizing: border-box;
 }
 
-/* ... (rest of base styles like :root, body, h1, etc.) ... */
+:root {
+    --primary-color: #ffffff; /* White text */
+    --secondary-color: #aaaaaa; /* Lighter gray text */
+    --background-dark: #1a1a1a; /* Very dark gray/off-black */
+    --background-medium: #2a2a2a; /* Slightly lighter dark gray */
+    --background-light: #333333; /* For cards or slightly lighter elements */
+    --accent-color: #00aaff; /* Changed accent color - Choose a good one */
+    --accent-color-darker: #0088cc; /* Darker accent for hover */
+    --border-color: #444444; /* Subtle borders */
+    --font-primary: 'Lato', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth; /* Only works for intra-page links */
+}
+
+body {
+    font-family: var(--font-primary);
+    background-color: var(--background-dark);
+    color: var(--primary-color);
+    line-height: 1.6;
+    font-size: 16px;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 1rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--primary-color); /* Ensure headings are bright */
+}
+
+h1 { font-size: 3rem; text-transform: uppercase; letter-spacing: 1px; }
+h2 { font-size: 2.2rem; text-align: center; margin-bottom: 1.5rem; }
+h3 { font-size: 1.5rem; }
+h4 { font-size: 1.2rem; }
+
+p {
+    margin-bottom: 1rem;
+    color: var(--secondary-color);
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+a:hover {
+    color: var(--accent-color);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+ul, ol {
+    list-style-position: inside; /* Or outside if preferred */
+    margin-bottom: 1rem;
+    padding-left: 1.5rem; /* Indent list items */
+}
+li {
+    margin-bottom: 0.5rem;
+    color: var(--secondary-color);
+}
+
+.container {
+    max-width: 1200px; /* Standard container width */
+    margin: 0 auto;
+    padding: 0 20px; /* Padding on sides */
+}
+
+.content-section {
+    padding: 80px 0; /* Vertical spacing for sections */
+}
+
+.page-intro {
+     padding-top: 120px; /* Add padding below fixed header */
+     padding-bottom: 60px;
+}
+.page-intro h2 {
+    margin-bottom: 0.5rem;
+}
+.page-intro .subtitle {
+    text-align: center;
+    font-size: 1.1rem;
+    color: var(--secondary-color);
+    margin-bottom: 3rem;
+}
+
+
+.dark-bg {
+    background-color: var(--background-medium);
+}
+
+.text-center {
+    text-align: center;
+}
 
 /* --- Buttons --- */
 .btn {
@@ -16,7 +114,13 @@
     cursor: pointer;
     text-align: center;
     font-weight: bold;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+.btn:hover {
+    transform: translateY(-2px); /* Subtle lift effect */
 }
 
 .btn-primary {
@@ -24,7 +128,7 @@
     color: #fff;
 }
 .btn-primary:hover {
-    background-color: darken(var(--accent-color), 10%); /* Needs Sass/JS or manual darker value */
+    background-color: var(--accent-color-darker);
     color: #fff;
 }
 
@@ -39,46 +143,58 @@
 }
 
 .btn-tertiary {
-    background-color: var(--background-medium);
+    background-color: var(--background-light);
     color: var(--primary-color);
-    border: 1px solid var(--secondary-color);
+    border: 1px solid var(--border-color);
 }
 .btn-tertiary:hover {
     background-color: var(--secondary-color);
     color: var(--background-dark);
+    border-color: var(--secondary-color);
 }
 
-/* --- NEW FILTER BUTTON STYLES --- */
 .btn-filter {
-    /* Style similar to other buttons */
-    margin: 0 5px; /* Add some spacing between filter buttons */
-    padding: 8px 15px; /* Slightly smaller padding maybe? Adjust as needed */
+    margin: 0 5px 10px 5px; /* Spacing for filter buttons */
+    padding: 8px 15px;
     border: 1px solid var(--secondary-color);
     background: transparent;
     color: var(--secondary-color);
     cursor: pointer;
-    border-radius: 5px; /* Keep consistent */
-    font-size: 0.9rem; /* Adjust size */
-    transition: background-color 0.3s ease, color 0.3s ease; /* Add transition */
+    border-radius: 20px; /* Pill shape */
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
-
-.btn-filter.active { /* Style for the currently active filter */
-    background: var(--secondary-color);
-    color: var(--background-dark);
+.btn-filter.active {
+    background: var(--accent-color);
+    color: #fff;
+    border-color: var(--accent-color);
 }
-/* --- END OF NEW FILTER BUTTON STYLES --- */
+.btn-filter:hover:not(.active) {
+     background: var(--background-light);
+     border-color: var(--background-light);
+     color: var(--primary-color);
+}
 
 
 /* --- Header --- */
 #main-header {
-    background-color: rgba(26, 26, 26, 0.9); /* Semi-transparent dark */
+    background-color: rgba(20, 20, 20, 0.9); /* Slightly darker, adjust opacity */
     padding: 15px 0;
-    position: fixed; /* Or sticky */
+    position: fixed;
     width: 100%;
     top: 0;
     left: 0;
     z-index: 1000;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: none;
+    border-bottom: 1px solid transparent; /* Prepare for scrolled border */
+}
+
+#main-header.scrolled {
+    background-color: rgba(20, 20, 20, 0.95); /* More solid on scroll */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    border-bottom: 1px solid var(--border-color); /* Add subtle line */
 }
 
 .header-container {
@@ -91,47 +207,350 @@
     font-size: 1.5rem;
     font-weight: bold;
     color: var(--primary-color);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+.logo a:hover {
+    color: var(--primary-color); /* Logo hover maybe shouldn't change */
 }
 
 #main-nav ul {
     list-style: none;
     display: flex;
+    padding-left: 0; /* Override default list padding */
 }
 
 #main-nav ul li {
-    margin-left: 25px;
+    margin-left: 30px; /* Space between nav items */
+    margin-bottom: 0; /* Override default li margin */
 }
 
 #main-nav ul li a {
     font-weight: bold;
     text-transform: uppercase;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     letter-spacing: 1px;
-    color: var(--primary-color); /* Ensure base color is set */
-    transition: color 0.3s ease; /* Inherited, but good practice */
+    padding: 5px 0; /* Add some vertical space */
+    position: relative;
+    color: var(--secondary-color); /* Dimmer default nav links */
 }
-
-#main-nav ul li a:hover { /* Already exists, keep it */
-     color: var(--accent-color);
+#main-nav ul li a::after { /* Underline effect */
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent-color);
+    bottom: -3px;
+    left: 0;
+    transition: width 0.3s ease;
 }
-
-/* --- NEW ACTIVE NAV LINK STYLE --- */
+#main-nav ul li a:hover,
 #main-nav ul li a.active {
-    color: var(--accent-color); /* Make active link match hover/accent color */
-    /* Optional: Add other styles like underline */
-    /* text-decoration: underline; */
-    /* text-underline-offset: 5px; */
+    color: var(--primary-color); /* Brighten on hover/active */
 }
-/* --- END OF NEW ACTIVE NAV LINK STYLE --- */
+#main-nav ul li a:hover::after,
+#main-nav ul li a.active::after {
+    width: 100%; /* Expand underline on hover/active */
+}
 
 
-#mobile-menu-toggle { /* Style for mobile */
-    display: none; /* Hide on desktop */
+#mobile-menu-toggle {
+    display: none;
     background: none;
     border: none;
     color: var(--primary-color);
-    font-size: 1.5rem;
+    font-size: 1.2rem; /* Adjust size */
     cursor: pointer;
+    padding: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
 }
 
-/* ... (rest of CSS: Hero, Gallery Grid, Product Grid, About, Contact, Footer, Responsive) ... */
+/* --- Hero Section --- */
+#hero {
+    min-height: 90vh; /* Slightly less than full maybe */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    padding-top: 80px; /* Account for fixed header */
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    z-index: -1;
+}
+.hero-background::after { /* Darkening Overlay */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Adjust opacity */
+}
+
+.hero-content h1 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    font-size: 3.5rem; /* Make it larger */
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    color: var(--secondary-color);
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* --- Gallery & Product Grids --- */
+.gallery-grid, .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+    gap: 30px; /* Slightly more gap */
+}
+
+.gallery-item, .product-item {
+    background-color: var(--background-light);
+    border-radius: 8px; /* Slightly more rounded */
+    overflow: hidden; /* Ensure image corners are clipped */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative; /* For potential overlays or info */
+}
+.gallery-item:hover, .product-item:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.gallery-item img, .product-item img {
+    width: 100%;
+    height: 280px; /* Consistent height for items */
+    object-fit: cover;
+    border-bottom: 1px solid var(--border-color); /* Separator */
+}
+.gallery-item a, .product-item a { /* Ensure link covers image */
+    display: block;
+}
+.gallery-item a:hover, .product-item a:hover {
+    color: inherit; /* Prevent link color change on image hover */
+}
+
+/* Product item specific text */
+.product-item {
+    padding: 20px;
+    text-align: center;
+}
+.product-item img {
+    border-bottom: none; /* No border needed if content is below */
+    margin-bottom: 15px;
+}
+.product-item h3 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+    color: var(--primary-color);
+}
+.product-item p { /* Price */
+    color: var(--accent-color);
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+.product-item .btn {
+    width: 100%; /* Make button full width */
+}
+
+
+/* --- About Page --- */
+.about-content { /* For Homepage Preview */
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+.about-image { flex-basis: 40%; text-align: center; }
+.about-image img { border-radius: 50%; max-width: 250px; }
+.about-text { flex-basis: 60%; }
+
+.about-page-content ul { /* Style list on about page */
+    padding-left: 0;
+    list-style: none;
+}
+.about-page-content li {
+    padding-left: 1.5em;
+    position: relative;
+}
+.about-page-content li::before {
+    content: '▹'; /* Custom bullet */
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+    font-weight: bold;
+}
+
+/* --- Contact Form --- */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+#contact-form input[type="text"],
+#contact-form input[type="email"],
+#contact-form textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--border-color);
+    background-color: var(--background-medium);
+    color: var(--primary-color);
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+#contact-form input[type="text"]:focus,
+#contact-form input[type="email"]:focus,
+#contact-form textarea:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(var(--accent-color-rgb), 0.2); /* Needs --accent-color-rgb variable */
+}
+
+#contact-form textarea {
+    resize: vertical; /* Allow vertical resize */
+}
+#contact-form button {
+    min-width: 180px; /* Give button some width */
+}
+#form-status { /* Style status messages */
+    font-weight: bold;
+}
+#form-status.success { color: lightgreen; }
+#form-status.error { color: lightcoral; }
+
+/* --- Footer --- */
+#main-footer {
+    background-color: #111; /* Darkest background */
+    padding: 40px 0;
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+    margin-top: 60px; /* Ensure space above footer */
+    border-top: 1px solid var(--border-color);
+}
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; /* Space between footer elements */
+}
+.footer-links a, .social-links a {
+    color: var(--secondary-color);
+    margin: 0 10px;
+}
+.footer-links a:hover, .social-links a:hover {
+    color: var(--primary-color);
+}
+.social-links { font-size: 1.2rem; }
+
+
+/* --- Responsive Design --- */
+@media (max-width: 992px) {
+    .gallery-grid, .product-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
+    }
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    .about-image { margin-bottom: 2rem; }
+}
+
+
+@media (max-width: 768px) {
+    h1 { font-size: 2.5rem; }
+    .hero-content h1 { font-size: 2.8rem; }
+    h2 { font-size: 1.8rem; }
+
+    .header-container {
+        padding: 0 15px;
+    }
+
+    #main-nav {
+        display: none;
+        position: absolute;
+        top: 100%; /* Position below header height */
+        left: 0;
+        width: 100%;
+        background-color: var(--background-dark);
+        flex-direction: column;
+        padding: 15px 0;
+        border-top: 1px solid var(--border-color);
+        box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    }
+
+    #main-nav.active {
+        display: flex; /* Show menu */
+    }
+
+    #main-nav ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    #main-nav ul li {
+        margin: 0;
+        text-align: center;
+    }
+    #main-nav ul li a {
+        display: block; /* Make link take full width */
+        padding: 15px 20px;
+        border-bottom: 1px solid var(--border-color);
+        color: var(--primary-color); /* Ensure visible */
+    }
+     #main-nav ul li:last-child a {
+        border-bottom: none;
+    }
+    #main-nav ul li a::after {
+        display: none; /* Hide underline effect on mobile nav */
+    }
+     #main-nav ul li a.active {
+        background-color: var(--background-light); /* Highlight active mobile link */
+    }
+
+
+    #mobile-menu-toggle {
+        display: block; /* Show hamburger button */
+    }
+
+    .gallery-grid, .product-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+    .content-section { padding: 60px 0; }
+     .page-intro { padding-top: 100px; } /* Adjust padding for header */
+
+}
+
+@media (max-width: 480px) {
+     h1 { font-size: 2rem; }
+     .hero-content h1 { font-size: 2.2rem; }
+     .gallery-grid, .product-grid {
+        grid-template-columns: 1fr; /* Single column on very small screens */
+    }
+    .btn { padding: 10px 20px; font-size: 0.8rem;}
+}
