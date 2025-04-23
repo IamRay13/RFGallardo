@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Work | RF Gallardo</title> <!-- Changed Title -->
+    <title>Work | RF Gallardo</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,7 +12,7 @@
 <body>
 
     <header id="main-header">
-        <!-- Identical Header structure as index.html -->
+        <!-- Identical Header structure -->
         <div class="container header-container">
             <div class="logo">
                 <a href="index.html">RF GALLARDO</a>
@@ -20,7 +20,7 @@
             <nav id="main-nav">
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="work.html">Work</a></li> <!-- JS will add .active -->
+                    <li><a href="work.html">Work</a></li>
                     <li><a href="shop.html">Shop</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="contact.html">Contact</a></li>
@@ -37,7 +37,7 @@
                 <h2>My Work</h2>
                 <p class="subtitle">A curated collection of photography and videography projects.</p>
 
-                <!-- Optional: Filter buttons -->
+                <!-- Filter buttons with data-filter attributes -->
                 <div class="filter-buttons text-center" style="margin-bottom: 3rem;">
                     <button class="btn btn-filter active" data-filter="all">All</button>
                     <button class="btn btn-filter" data-filter="photo">Photography</button>
@@ -48,21 +48,56 @@
 
 
                 <div class="gallery-grid">
-                    <!-- Add MANY more items here for the full portfolio -->
-                    <!-- Use data-category attribute for filtering JS -->
-                    <div class="gallery-item" data-category="photo landscape"><a href="#" title="View Details"><img src="images/placeholder-portfolio-1.jpg" alt="Portfolio Item 1"></a></div>
-                    <div class="gallery-item" data-category="photo portraits"><a href="#" title="View Details"><img src="images/placeholder-portfolio-2.jpg" alt="Portfolio Item 2"></a></div>
-                    <div class="gallery-item" data-category="video"><a href="#" title="View Details"><img src="images/placeholder-portfolio-3.jpg" alt="Portfolio Item 3"></a></div>
-                    <div class="gallery-item" data-category="photo landscape"><a href="#" title="View Details"><img src="images/placeholder-portfolio-4.jpg" alt="Portfolio Item 4"></a></div>
-                    <div class="gallery-item" data-category="photo portraits"><a href="#" title="View Details"><img src="images/placeholder-portfolio-5.jpg" alt="Portfolio Item 5"></a></div>
-                    <div class="gallery-item" data-category="video"><a href="#" title="View Details"><img src="images/placeholder-portfolio-6.jpg" alt="Portfolio Item 6"></a></div>
-                    <div class="gallery-item" data-category="photo landscape"><a href="#" title="View Details"><img src="images/placeholder-portfolio-7.jpg" alt="Portfolio Item 7"></a></div>
-                    <div class="gallery-item" data-category="photo portraits"><a href="#" title="View Details"><img src="images/placeholder-portfolio-8.jpg" alt="Portfolio Item 8"></a></div>
-                    <div class="gallery-item" data-category="photo landscape"><a href="#" title="View Details"><img src="images/placeholder-portfolio-9.jpg" alt="Portfolio Item 9"></a></div>
-                    <div class="gallery-item" data-category="video"><a href="#" title="View Details"><img src="images/placeholder-portfolio-10.jpg" alt="Portfolio Item 10"></a></div>
-                    <div class="gallery-item" data-category="photo portraits"><a href="#" title="View Details"><img src="images/placeholder-portfolio-11.jpg" alt="Portfolio Item 11"></a></div>
-                    <div class="gallery-item" data-category="photo landscape"><a href="#" title="View Details"><img src="images/placeholder-portfolio-12.jpg" alt="Portfolio Item 12"></a></div>
-                    <!-- Add many more... -->
+                    <!-- Gallery items with data-category attributes -->
+                    <!-- Example: Item 1 is Photography and Landscape -->
+                    <div class="gallery-item" data-category="photo landscape">
+                        <a href="#" title="View Landscape Photo Details"><img src="images/placeholder-portfolio-1.jpg" alt="Portfolio Item 1 - Landscape"></a>
+                    </div>
+                     <!-- Example: Item 2 is Photography and Portrait -->
+                    <div class="gallery-item" data-category="photo portraits">
+                        <a href="#" title="View Portrait Photo Details"><img src="images/placeholder-portfolio-2.jpg" alt="Portfolio Item 2 - Portrait"></a>
+                    </div>
+                     <!-- Example: Item 3 is Videography -->
+                    <div class="gallery-item" data-category="video">
+                        <a href="#" title="View Video Project Details"><img src="images/placeholder-portfolio-3.jpg" alt="Portfolio Item 3 - Video"></a>
+                    </div>
+                     <!-- Example: Item 4 is Photography and Landscape -->
+                    <div class="gallery-item" data-category="photo landscape">
+                        <a href="#" title="View Another Landscape Photo"><img src="images/placeholder-portfolio-4.jpg" alt="Portfolio Item 4 - Landscape"></a>
+                    </div>
+                    <!-- Example: Item 5 is Photography and Portrait -->
+                    <div class="gallery-item" data-category="photo portraits">
+                        <a href="#" title="View Another Portrait Photo"><img src="images/placeholder-portfolio-5.jpg" alt="Portfolio Item 5 - Portrait"></a>
+                    </div>
+                     <!-- Example: Item 6 is Videography -->
+                    <div class="gallery-item" data-category="video">
+                        <a href="#" title="View Short Film Details"><img src="images/placeholder-portfolio-6.jpg" alt="Portfolio Item 6 - Video"></a>
+                    </div>
+                     <!-- Example: Item 7 is Photography, Landscape, and maybe could be 'travel' if you add that filter -->
+                    <div class="gallery-item" data-category="photo landscape">
+                        <a href="#" title="View Mountain Range Photo"><img src="images/placeholder-portfolio-7.jpg" alt="Portfolio Item 7 - Landscape"></a>
+                    </div>
+                    <!-- Example: Item 8 is Photography and Portrait -->
+                    <div class="gallery-item" data-category="photo portraits">
+                         <a href="#" title="View Studio Portrait"><img src="images/placeholder-portfolio-8.jpg" alt="Portfolio Item 8 - Portrait"></a>
+                    </div>
+                     <!-- Example: Item 9 is Photography and Landscape -->
+                    <div class="gallery-item" data-category="photo landscape">
+                        <a href="#" title="View Coastal Landscape"><img src="images/placeholder-portfolio-9.jpg" alt="Portfolio Item 9 - Landscape"></a>
+                    </div>
+                    <!-- Example: Item 10 is Videography and maybe 'commercial' -->
+                    <div class="gallery-item" data-category="video">
+                        <a href="#" title="View Commercial Video Project"><img src="images/placeholder-portfolio-10.jpg" alt="Portfolio Item 10 - Video"></a>
+                    </div>
+                    <!-- Example: Item 11 is Photography and Portrait -->
+                    <div class="gallery-item" data-category="photo portraits">
+                        <a href="#" title="View Candid Portrait"><img src="images/placeholder-portfolio-11.jpg" alt="Portfolio Item 11 - Portrait"></a>
+                    </div>
+                    <!-- Example: Item 12 is Photography and Landscape -->
+                    <div class="gallery-item" data-category="photo landscape">
+                         <a href="#" title="View Forest Photo"><img src="images/placeholder-portfolio-12.jpg" alt="Portfolio Item 12 - Landscape"></a>
+                    </div>
+                    <!-- Add many more items with appropriate data-category attributes -->
                 </div>
 
                 <!-- Optional: Pagination -->
@@ -73,7 +108,7 @@
     </main>
 
     <footer id="main-footer">
-        <!-- Identical Footer structure as index.html -->
+        <!-- Identical Footer structure -->
         <div class="container footer-container">
             <div class="footer-links">
                  <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
