@@ -19,8 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
         };
 
         window.addEventListener('scroll', handleScroll);
-        // Initial check in case the page loads already scrolled
-        handleScroll();
+        handleScroll(); // Initial check
     }
 
     /**
@@ -33,9 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (menuToggle && mainNav) {
         menuToggle.addEventListener('click', () => {
             mainNav.classList.toggle('active');
-            // Change button text for better UX
             menuToggle.textContent = mainNav.classList.contains('active') ? 'CLOSE' : 'MENU';
-            // Optional: Toggle aria-expanded attribute for accessibility
             menuToggle.setAttribute('aria-expanded', mainNav.classList.contains('active'));
         });
     }
@@ -45,30 +42,23 @@ document.addEventListener('DOMContentLoaded', () => {
      * Adds an 'active' class to the navigation link corresponding to the current page.
      */
     const navLinks = document.querySelectorAll('#main-nav ul li a');
-    // Use location.href for a more reliable comparison including the full path
     const currentPageUrl = window.location.href;
 
     navLinks.forEach(link => {
-        // Remove trailing slash from URLs for comparison consistency if necessary
-        const cleanCurrentPageUrl = currentPageUrl.replace(/\/$/, '');
-        const cleanLinkHref = link.href.replace(/\/$/, '');
+        const cleanCurrentPageUrl = currentPageUrl.replace(/\/$/, ''); // Remove trailing slash if exists
+        const cleanLinkHref = link.href.replace(/\/$/, ''); // Remove trailing slash if exists
 
-        if (cleanLinkHref === cleanCurrentPageUrl) {
+        // Direct match or check if it's the index page
+        if (cleanLinkHref === cleanCurrentPageUrl ||
+           ((window.location.pathname === '/' || window.location.pathname.endsWith('index.html')) && link.pathname.endsWith('index.html')))
+        {
+            // Clear active class from all links first to handle edge cases
+            navLinks.forEach(l => l.classList.remove('active'));
+            // Add active class to the matched link
             link.classList.add('active');
-        } else {
-            link.classList.remove('active'); // Ensure other links are not marked active
         }
     });
-    // Special case for homepage if URL is just the domain root without index.html
-    if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
-        const homeLink = document.querySelector('#main-nav ul li a[href="index.html"]');
-        if (homeLink) {
-             // Make sure only the correct home link is active
-             navLinks.forEach(link => link.classList.remove('active'));
-             homeLink.classList.add('active');
-        }
-    }
-
+    // Ensure the above logic correctly handles the root '/' case by matching index.html
 
     /**
      * Update Footer Year
@@ -82,151 +72,111 @@ document.addEventListener('DOMContentLoaded', () => {
     /**
      * Gallery/Product Filtering Functionality
      * Filters items based on data attributes when filter buttons are clicked.
-     * Only runs if a container with class 'filter-buttons' exists on the page.
      */
     const filterContainer = document.querySelector('.filter-buttons');
-
-    if (filterContainer) { // Check if filter buttons container exists
+    if (filterContainer) {
         const filterButtons = filterContainer.querySelectorAll('.btn-filter');
-        // Find the sibling grid element (assumes it's immediately after filter buttons)
-        const galleryGrid = filterContainer.nextElementSibling; // Adjust selector if grid is nested differently
-        const galleryItems = galleryGrid ? galleryGrid.querySelectorAll('.gallery-item, .product-item') : []; // Select both types
+        const galleryGrid = filterContainer.nextElementSibling;
+        const galleryItems = galleryGrid ? galleryGrid.querySelectorAll('.gallery-item, .product-item') : [];
 
         if (galleryItems.length > 0 && filterButtons.length > 0) {
             filterButtons.forEach(button => {
                 button.addEventListener('click', () => {
-                    const filterValue = button.dataset.filter; // Get filter value from data-filter attribute
+                    const filterValue = button.dataset.filter;
 
-                    // Update 'active' class on buttons
                     filterButtons.forEach(btn => btn.classList.remove('active'));
                     button.classList.add('active');
 
-                    // Loop through gallery/product items and show/hide based on filter
                     galleryItems.forEach(item => {
-                        const itemCategories = item.dataset.category; // Get categories from data-category attribute
-
-                        // Determine if the item should be shown
+                        const itemCategories = item.dataset.category;
                         const shouldShow = (filterValue === 'all') || (itemCategories && itemCategories.includes(filterValue));
-
-                        // Apply display style - resetting to '' allows CSS to control default display (block, grid, flex)
-                        if (shouldShow) {
-                            item.style.display = '';
-                        } else {
-                            item.style.display = 'none';
-                        }
+                        item.style.display = shouldShow ? '' : 'none';
                     });
                 });
             });
-             console.log("Filter functionality initialized.");
-        } else {
-             console.log("Filter buttons or gallery items not found correctly.");
+            console.log("Filter functionality initialized.");
         }
     }
 
-
     /**
      * Contact Form Submission Placeholder
-     * Prevents default form submission and shows a status message.
-     * Replace the setTimeout with actual AJAX/Fetch submission logic.
+     * Replace with actual form submission logic.
      */
     const contactForm = document.getElementById('contact-form');
     const formStatus = document.getElementById('form-status');
-
     if (contactForm && formStatus) {
         contactForm.addEventListener('submit', (e) => {
-            e.preventDefault(); // Stop browser's default form submission
+            e.preventDefault();
             formStatus.textContent = 'Sending message...';
-            formStatus.className = ''; // Clear previous status classes (like 'success' or 'error')
-            formStatus.style.color = 'var(--secondary-color)'; // Reset color
+            formStatus.className = '';
+            formStatus.style.color = 'var(--secondary-color)';
 
-            // --- !!! ---
-            // TODO: Replace this setTimeout with your actual form submission logic.
-            // Example using Fetch API to post to a server endpoint or service:
-            // fetch('/api/contact', {
-            //     method: 'POST',
-            //     headers: { 'Content-Type': 'application/json' },
-            //     body: JSON.stringify(Object.fromEntries(new FormData(contactForm)))
-            // })
-            // .then(response => response.json())
-            // .then(data => {
-            //     if (data.success) {
-            //         formStatus.textContent = 'Message sent successfully!';
-            //         formStatus.classList.add('success'); // Add success class (requires CSS)
-            //         formStatus.style.color = 'lightgreen'; // Example success color
-            //         contactForm.reset();
-            //     } else {
-            //         formStatus.textContent = data.message || 'An error occurred. Please try again.';
-            //         formStatus.classList.add('error'); // Add error class (requires CSS)
-            //         formStatus.style.color = 'lightcoral'; // Example error color
-            //     }
-            // })
-            // .catch(error => {
-            //     console.error('Form submission error:', error);
-            //     formStatus.textContent = 'A network error occurred. Please try again.';
-            //     formStatus.classList.add('error');
-            //     formStatus.style.color = 'lightcoral';
-            // });
-
-            // Placeholder Simulation Logic:
+            // --- Placeholder Simulation ---
             setTimeout(() => {
-                // Simulate random success/failure
-                const isSuccess = Math.random() > 0.2; // 80% chance of success
-
+                const isSuccess = Math.random() > 0.2;
                 if (isSuccess) {
                     formStatus.textContent = 'Message sent successfully! (Placeholder)';
                     formStatus.classList.add('success');
-                    formStatus.style.color = 'lightgreen'; // Example success color
-                    contactForm.reset(); // Clear the form on success
+                    formStatus.style.color = 'lightgreen';
+                    contactForm.reset();
                 } else {
-                     formStatus.textContent = 'An error occurred. Please try again. (Placeholder)';
-                     formStatus.classList.add('error');
-                     formStatus.style.color = 'lightcoral'; // Example error color
+                    formStatus.textContent = 'An error occurred. Please try again. (Placeholder)';
+                    formStatus.classList.add('error');
+                    formStatus.style.color = 'lightcoral';
                 }
-
-            }, 1500); // Simulate network delay
-            // --- !!! ---
-
+            }, 1500);
+            // --- End Placeholder ---
         });
-         console.log("Contact form listener initialized.");
+        console.log("Contact form listener initialized.");
     }
 
     /**
      * Add to Cart Button Placeholder Functionality
-     * Logs a message and provides visual feedback when 'Add to Cart' is clicked.
-     * Replace console.log with actual e-commerce cart integration logic.
+     * Replace with actual e-commerce cart integration logic.
      */
     const addToCartButtons = document.querySelectorAll('.add-to-cart');
     if (addToCartButtons.length > 0) {
         addToCartButtons.forEach(button => {
             button.addEventListener('click', (e) => {
-                // Prevent default action if the button is inside a link
                 e.preventDefault();
-
                 const productItem = button.closest('.product-item');
                 const productName = productItem ? productItem.querySelector('h3').textContent : 'Unknown Product';
-
                 console.log(`Adding "${productName}" to cart (Placeholder)`);
-
-                // Provide visual feedback
                 const originalText = button.textContent;
                 button.textContent = 'Added!';
-                button.disabled = true; // Temporarily disable button
-
-                // TODO: Add actual cart logic here
-                // - Update cart quantity indicator somewhere on the page
-                // - Store cart data (e.g., in localStorage or via API call)
-
-                // Reset button after a short delay
+                button.disabled = true;
                 setTimeout(() => {
                     button.textContent = originalText;
                     button.disabled = false;
-                }, 1500); // Reset after 1.5 seconds
+                }, 1500);
             });
         });
-         console.log("'Add to Cart' listeners initialized.");
+        console.log("'Add to Cart' listeners initialized.");
     }
 
-    // Final log message to confirm script execution
+
+    /**
+     * Initialize GLightbox (MUST be after the library JS is loaded)
+     * Finds elements with the 'glightbox' class and enables the lightbox functionality.
+     */
+    try {
+        const lightbox = GLightbox({
+            // Add custom options here if desired:
+             loop: true, // Loop back to start from end
+             touchNavigation: true,
+             keyboardNavigation: true,
+            // openEffect: 'zoom', // Example effects
+            // closeEffect: 'fade',
+             selector: '.glightbox' // Important: ensure this matches the class on your links
+        });
+        console.log("GLightbox initialized successfully.");
+    } catch (e) {
+        // Catch error if GLightbox library didn't load correctly
+        console.error("GLightbox library not found or initialization failed:", e);
+    }
+
+
+    // Final log message
     console.log("RF Gallardo website script fully loaded and initialized.");
 
 }); // End of DOMContentLoaded
