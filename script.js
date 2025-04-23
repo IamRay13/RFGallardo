@@ -1,24 +1,20 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // --- Sticky Header (Optional) ---
+    // --- Sticky Header ---
     const header = document.getElementById('main-header');
-    let lastScrollY = window.scrollY;
+    if (header) {
+        const scrollThreshold = 50; // Pixels to scroll before adding class
+        let lastScrollY = window.scrollY;
 
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) { // Add class after scrolling down 50px
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
-        }
-        lastScrollY = window.scrollY;
-    });
-    // Add CSS for .scrolled if needed (e.g., change background)
-    /*
-    #main-header.scrolled {
-        background-color: var(--background-dark); // Make it solid on scroll
-        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > scrollThreshold) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+            lastScrollY = window.scrollY;
+        });
     }
-    */
 
     // --- Mobile Menu Toggle ---
     const menuToggle = document.getElementById('mobile-menu-toggle');
@@ -27,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (menuToggle && mainNav) {
         menuToggle.addEventListener('click', () => {
             mainNav.classList.toggle('active');
-            // Optional: Change button text/icon
+            // Change button text (optional)
             if (mainNav.classList.contains('active')) {
                 menuToggle.textContent = 'CLOSE';
             } else {
@@ -36,34 +32,22 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- Smooth Scrolling for Nav Links ---
-    const navLinks = document.querySelectorAll('#main-nav a[href^="#"]');
+    // --- Active Navigation Link Highlighting ---
+    const navLinks = document.querySelectorAll('#main-nav ul li a');
+    const currentPage = window.location.pathname.split('/').pop(); // Gets filename like "work.html" or "" for index
+
     navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            let targetId = this.getAttribute('href');
-            let targetElement = document.querySelector(targetId);
+        const linkPage = link.getAttribute('href').split('/').pop();
 
-            if (targetElement) {
-                // Close mobile menu if open before scrolling
-                if (mainNav.classList.contains('active')) {
-                     mainNav.classList.remove('active');
-                     menuToggle.textContent = 'MENU';
-                }
-
-                // Calculate scroll position (consider header height)
-                const headerHeight = header.offsetHeight;
-                const elementPosition = targetElement.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.pageYOffset - headerHeight;
-
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: 'smooth'
-                });
-            }
-        });
+        // Handle index case (empty string or index.html)
+        if ((currentPage === "" || currentPage === "index.html") && (linkPage === "" || linkPage === "index.html")) {
+             link.classList.add('active');
+        }
+        // Handle other pages
+        else if (currentPage !== "" && currentPage !== "index.html" && linkPage === currentPage) {
+            link.classList.add('active');
+        }
     });
-
 
     // --- Update Footer Year ---
     const yearSpan = document.getElementById('year');
@@ -71,30 +55,78 @@ document.addEventListener('DOMContentLoaded', () => {
         yearSpan.textContent = new Date().getFullYear();
     }
 
-    // --- Placeholder for Gallery Lightbox ---
-    //  const galleryItems = document.querySelectorAll('.gallery-item');
-    //  galleryItems.forEach(item => {
-    //      item.addEventListener('click', () => {
-    //          // Add logic here to open a lightbox/modal
-    //          console.log('Open lightbox for:', item.querySelector('img').alt);
-    //          // You would typically use a library like Lightbox2, FancyBox, or build your own modal
-    //      });
-    //  });
+    // --- Placeholder for Gallery Filtering ---
+    const filterButtons = document.querySelectorAll('.btn-filter');
+    const galleryItems = document.querySelectorAll('.gallery-item, .product-item'); // Select both types
+
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const filterValue = button.getAttribute('data-filter');
+
+            // Update active button state
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+
+            // Filter items
+            galleryItems.forEach(item => {
+                const itemCategory = item.getAttribute('data-category');
+                if (filterValue === 'all' || (itemCategory && itemCategory.includes(filterValue))) {
+                    item.style.display = 'block'; // Or 'grid', 'flex', etc. depending on layout needs
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+    });
 
 
     // --- Placeholder for Contact Form Submission ---
-    // const contactForm = document.getElementById('contact-form');
-    // if (contactForm) {
-    //     contactForm.addEventListener('submit', (e) => {
-    //         e.preventDefault(); // Prevent default page reload
-    //         console.log('Form submitted');
-    //         // Add logic here for form validation and sending data
-    //         // (e.g., using Fetch API to send to a server endpoint or service like Formspree)
-    //         alert('Form submitted (placeholder - no data sent)');
-    //         contactForm.reset(); // Clear the form
-    //     });
-    // }
+    const contactForm = document.getElementById('contact-form');
+    const formStatus = document.getElementById('form-status');
+
+    if (contactForm && formStatus) {
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault(); // Prevent default page reload
+            formStatus.textContent = 'Sending...';
+            formStatus.className = ''; // Clear previous status classes
+
+            // --- !!! ---
+            // Replace this setTimeout with actual form submission logic
+            // using Fetch API to send data to a server endpoint or a service like Formspree/Netlify Forms
+            setTimeout(() => {
+                // Simulate success for now
+                const isSuccess = Math.random() > 0.2; // Simulate occasional failure
+
+                if (isSuccess) {
+                    formStatus.textContent = 'Message sent successfully!';
+                    formStatus.classList.add('success');
+                    contactForm.reset(); // Clear the form
+                } else {
+                     formStatus.textContent = 'An error occurred. Please try again.';
+                     formStatus.classList.add('error');
+                }
+
+            }, 1500); // Simulate network delay
+            // --- !!! ---
+
+        });
+    }
+
+    // --- Placeholder for Add to Cart ---
+    const addToCartButtons = document.querySelectorAll('.add-to-cart');
+     addToCartButtons.forEach(button => {
+         button.addEventListener('click', (e) => {
+            // Prevent link navigation if button is inside <a>
+            e.preventDefault();
+            const productItem = button.closest('.product-item');
+            const productName = productItem.querySelector('h3').textContent;
+            console.log(`Adding "${productName}" to cart (placeholder)`);
+            // Add actual cart logic here (update cart icon, store data, etc.)
+            button.textContent = 'Added!';
+            setTimeout(() => { button.textContent = 'Add to Cart'; }, 1500); // Reset button text
+         });
+     });
 
 
-    console.log("Website script loaded.");
+    console.log("RF Gallardo website script loaded.");
 });
