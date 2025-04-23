@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop | RF Gallardo</title> <!-- Changed Title -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header id="main-header">
+        <!-- Identical Header structure -->
+        <div class="container header-container">
+            <div class="logo">
+                <a href="index.html">RF GALLARDO</a>
+            </div>
+            <nav id="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="work.html">Work</a></li>
+                    <li><a href="shop.html">Shop</a></li> <!-- JS will add .active -->
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <!-- Add Cart Icon Here -->
+                    <!-- <li><a href="/cart" class="cart-icon">CART (0)</a></li> -->
+                </ul>
+            </nav>
+            <button id="mobile-menu-toggle">MENU</button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Shop Page Content Section -->
+        <section id="shop-page-section" class="content-section page-intro">
+            <div class="container">
+                <h2>Shop Digital Assets & Merchandise</h2>
+                <p class="subtitle">Elevate your work with presets, LUTs, and grab some RFG gear.</p>
+
+                 <!-- Optional: Product Categories/Filters -->
+                 <div class="filter-buttons text-center" style="margin-bottom: 3rem;">
+                     <button class="btn btn-filter active" data-filter="all">All Products</button>
+                     <button class="btn btn-filter" data-filter="presets">Presets</button>
+                     <button class="btn btn-filter" data-filter="luts">LUTs</button>
+                     <button class="btn btn-filter" data-filter="merch">Merchandise</button>
+                 </div>
+
+                <div class="product-grid">
+                    <!-- Add MANY more products -->
+                    <div class="product-item" data-category="presets">
+                        <a href="#" title="View Product"><img src="images/placeholder-product-1.jpg" alt="Preset Pack Vol. 1"></a>
+                        <h3>Preset Pack Vol. 1</h3>
+                        <p>$29.99</p>
+                        <button class="btn btn-primary add-to-cart">Add to Cart</button>
+                    </div>
+                     <div class="product-item" data-category="luts">
+                        <a href="#" title="View Product"><img src="images/placeholder-product-2.jpg" alt="Cinematic LUTs"></a>
+                        <h3>Cinematic LUTs</h3>
+                        <p>$39.99</p>
+                        <button class="btn btn-primary add-to-cart">Add to Cart</button>
+                    </div>
+                     <div class="product-item" data-category="merch">
+                        <a href="#" title="View Product"><img src="images/placeholder-product-3.jpg" alt="RFG Signature Tee"></a>
+                        <h3>RFG Signature Tee</h3>
+                        <p>$24.99</p>
+                        <button class="btn btn-primary add-to-cart">Add to Cart</button>
+                    </div>
+                     <div class="product-item" data-category="presets">
+                        <a href="#" title="View Product"><img src="images/placeholder-product-4.jpg" alt="Moody Tones Presets"></a>
+                        <h3>Moody Tones Presets</h3>
+                        <p>$29.99</p>
+                        <button class="btn btn-primary add-to-cart">Add to Cart</button>
+                    </div>
+                     <div class="product-item" data-category="luts">
+                        <a href="#" title="View Product"><img src="images/placeholder-product-5.jpg" alt="Vintage Film LUTs"></a>
+                        <h3>Vintage Film LUTs</h3>
+                        <p>$39.99</p>
+                        <button class="btn btn-primary add-to-cart">Add to Cart</button>
+                    </div>
+                     <div class="product-item" data-category="merch">
+                        <a href="#" title="View Product"><img src="images/placeholder-product-6.jpg" alt="RFG Lens Cap Hoodie"></a>
+                        <h3>RFG Lens Cap Hoodie</h3>
+                        <p>$54.99</p>
+                        <button class="btn btn-primary add-to-cart">Add to Cart</button>
+                    </div>
+                    <!-- Add many more... -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="main-footer">
+        <!-- Identical Footer structure -->
+        <div class="container footer-container">
+            <div class="footer-links">
+                 <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+            </div>
+            <div class="social-links">
+                <a href="#" aria-label="Facebook">FB</a> | <a href="#" aria-label="Instagram">IG</a> | <a href="#" aria-label="YouTube">YT</a>
+            </div>
+            <div class="copyright">
+                © <span id="year"></span> RF Gallardo. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
