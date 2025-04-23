@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | RF Gallardo</title> <!-- Changed Title -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header id="main-header">
+        <!-- Identical Header structure -->
+        <div class="container header-container">
+            <div class="logo">
+                <a href="index.html">RF GALLARDO</a>
+            </div>
+            <nav id="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="work.html">Work</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="about.html">About</a></li> <!-- JS will add .active -->
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <button id="mobile-menu-toggle">MENU</button>
+        </div>
+    </header>
+
+    <main>
+        <!-- About Page Content Section -->
+        <section id="about-page-section" class="content-section page-intro">
+            <div class="container">
+                <h2>About RF Gallardo</h2>
+                <p class="subtitle">The story behind the lens.</p>
+
+                <div class="about-page-content">
+                    <div class="about-main-image text-center" style="margin-bottom: 3rem;">
+                        <img src="images/placeholder-profile-large.jpg" alt="RF Gallardo - Main Profile" style="max-width: 400px; border-radius: 50%;">
+                    </div>
+
+                    <div class="about-text-block" style="max-width: 800px; margin: 0 auto;">
+                        <h3>My Journey</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+                        <h3 style="margin-top: 2rem;">Philosophy</h3>
+                        <p>Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis et commodo pharetra, est eros bibendum elit, nec luctus magna felis sollicitudin mauris. Integer in mauris eu nibh euismod gravida.</p>
+
+                         <h3 style="margin-top: 2rem;">Gear Highlights</h3>
+                         <p>While gear doesn't make the creator, here's some of the trusted equipment I use:</p>
+                         <ul>
+                             <li>Camera Body: Sony A7 IV / Canon R5 (Example)</li>
+                             <li>Favorite Lens: Sigma 35mm f/1.4 / Canon RF 50mm f/1.2 (Example)</li>
+                             <li>Drone: DJI Mavic 3 (Example)</li>
+                             <li>Editing: DaVinci Resolve / Adobe Creative Suite (Example)</li>
+                         </ul>
+                         <p style="margin-top: 2rem;">Let's connect and create something memorable!</p>
+                         <div class="text-center" style="margin-top: 2rem;">
+                             <a href="contact.html" class="btn btn-primary">Contact Me</a>
+                         </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="main-footer">
+        <!-- Identical Footer structure -->
+         <div class="container footer-container">
+            <div class="footer-links">
+                 <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+            </div>
+            <div class="social-links">
+                <a href="#" aria-label="Facebook">FB</a> | <a href="#" aria-label="Instagram">IG</a> | <a href="#" aria-label="YouTube">YT</a>
+            </div>
+            <div class="copyright">
+                © <span id="year"></span> RF Gallardo. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
