@@ -3,149 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | Your Name</title> <!-- Changed title -->
+    <title>Work | RF Gallardo</title> <!-- Changed Title -->
     <link rel="stylesheet" href="style.css">
-    <!-- Link to Google Fonts or other font libraries if needed -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet"> <!-- Example Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!-- Re-use the same header -->
     <header id="main-header">
+        <!-- Identical Header structure as index.html -->
         <div class="container header-container">
             <div class="logo">
-                <a href="index.html">YOUR LOGO</a> <!-- Link back to homepage -->
+                <a href="index.html">RF GALLARDO</a>
             </div>
             <nav id="main-nav">
                 <ul>
-                    <!-- Update links to point to index.html sections if needed, or make them relative -->
-                    <li><a href="index.html#hero">Home</a></li>
-                    <li><a href="portfolio.html" class="active">Work</a></li> <!-- Mark 'Work' as active -->
-                    <li><a href="index.html#shop">Shop</a></li>
-                    <li><a href="index.html#about">About</a></li>
-                    <li><a href="index.html#contact">Contact</a></li>
-                    <!-- Add Cart/Search Icons if needed -->
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="work.html">Work</a></li> <!-- JS will add .active -->
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
-            <button id="mobile-menu-toggle">MENU</button> <!-- For mobile -->
+            <button id="mobile-menu-toggle">MENU</button>
         </div>
     </header>
 
     <main>
         <!-- Portfolio Page Content Section -->
-        <section id="portfolio-page-section" class="content-section">
+        <section id="portfolio-page-section" class="content-section page-intro">
             <div class="container">
                 <h2>My Work</h2>
-                <p style="text-align: center; margin-bottom: 3rem; color: var(--secondary-color);">
-                    A collection of my favorite photography and videography projects.
-                </p>
+                <p class="subtitle">A curated collection of photography and videography projects.</p>
 
-                <!-- Optional: Filter buttons could go here -->
-                <!--
-                <div class="filter-buttons" style="text-align: center; margin-bottom: 2rem;">
-                    <button class="btn btn-filter active">All</button>
-                    <button class="btn btn-filter">Photography</button>
-                    <button class="btn btn-filter">Videography</button>
-                    <button class="btn btn-filter">Portraits</button>
-                    <button class="btn btn-filter">Landscapes</button>
+                <!-- Optional: Filter buttons -->
+                <div class="filter-buttons text-center" style="margin-bottom: 3rem;">
+                    <button class="btn btn-filter active" data-filter="all">All</button>
+                    <button class="btn btn-filter" data-filter="photo">Photography</button>
+                    <button class="btn btn-filter" data-filter="video">Videography</button>
+                    <button class="btn btn-filter" data-filter="portraits">Portraits</button>
+                    <button class="btn btn-filter" data-filter="landscape">Landscapes</button>
                 </div>
-                -->
+
 
                 <div class="gallery-grid">
                     <!-- Add MANY more items here for the full portfolio -->
-                    <!-- Wrap images in links if they should lead to a detail page or lightbox -->
-
-                    <div class="gallery-item">
-                        <a href="#" title="View Image Details"> <!-- Placeholder link -->
-                           <img src="placeholder-portfolio-1.jpg" alt="Portfolio Item 1 Description">
-                        </a>
-                    </div>
-                    <div class="gallery-item">
-                        <a href="#" title="View Image Details">
-                           <img src="placeholder-portfolio-2.jpg" alt="Portfolio Item 2 Description">
-                        </a>
-                    </div>
-                    <div class="gallery-item">
-                        <a href="#" title="View Image Details">
-                           <img src="placeholder-portfolio-3.jpg" alt="Portfolio Item 3 Description">
-                        </a>
-                    </div>
-                    <div class="gallery-item">
-                        <a href="#" title="View Image Details">
-                           <img src="placeholder-portfolio-4.jpg" alt="Portfolio Item 4 Description">
-                        </a>
-                    </div>
-                    <div class="gallery-item">
-                         <a href="#" title="View Image Details">
-                           <img src="placeholder-portfolio-5.jpg" alt="Portfolio Item 5 Description">
-                        </a>
-                    </div>
-                    <div class="gallery-item">
-                         <a href="#" title="View Image Details">
-                            <img src="placeholder-portfolio-6.jpg" alt="Portfolio Item 6 Description">
-                        </a>
-                    </div>
-                    <div class="gallery-item">
-                         <a href="#" title="View Image Details">
-                            <img src="placeholder-portfolio-7.jpg" alt="Portfolio Item 7 Description">
-                        </a>
-                    </div>
-                    <div class="gallery-item">
-                         <a href="#" title="View Image Details">
-                            <img src="placeholder-portfolio-8.jpg" alt="Portfolio Item 8 Description">
-                        </a>
-                    </div>
-                     <div class="gallery-item">
-                         <a href="#" title="View Image Details">
-                           <img src="placeholder-portfolio-9.jpg" alt="Portfolio Item 9 Description">
-                        </a>
-                    </div>
-                    <div class="gallery-item">
-                         <a href="#" title="View Image Details">
-                            <img src="placeholder-portfolio-10.jpg" alt="Portfolio Item 10 Description">
-                        </a>
-                    </div>
-                    <div class="gallery-item">
-                         <a href="#" title="View Image Details">
-                            <img src="placeholder-portfolio-11.jpg" alt="Portfolio Item 11 Description">
-                        </a>
-                    </div>
-                    <div class="gallery-item">
-                         <a href="#" title="View Image Details">
-                            <img src="placeholder-portfolio-12.jpg" alt="Portfolio Item 12 Description">
-                        </a>
-                    </div>
-                    <!-- Add as many items as needed for the full portfolio -->
+                    <!-- Use data-category attribute for filtering JS -->
+                    <div class="gallery-item" data-category="photo landscape"><a href="#" title="View Details"><img src="images/placeholder-portfolio-1.jpg" alt="Portfolio Item 1"></a></div>
+                    <div class="gallery-item" data-category="photo portraits"><a href="#" title="View Details"><img src="images/placeholder-portfolio-2.jpg" alt="Portfolio Item 2"></a></div>
+                    <div class="gallery-item" data-category="video"><a href="#" title="View Details"><img src="images/placeholder-portfolio-3.jpg" alt="Portfolio Item 3"></a></div>
+                    <div class="gallery-item" data-category="photo landscape"><a href="#" title="View Details"><img src="images/placeholder-portfolio-4.jpg" alt="Portfolio Item 4"></a></div>
+                    <div class="gallery-item" data-category="photo portraits"><a href="#" title="View Details"><img src="images/placeholder-portfolio-5.jpg" alt="Portfolio Item 5"></a></div>
+                    <div class="gallery-item" data-category="video"><a href="#" title="View Details"><img src="images/placeholder-portfolio-6.jpg" alt="Portfolio Item 6"></a></div>
+                    <div class="gallery-item" data-category="photo landscape"><a href="#" title="View Details"><img src="images/placeholder-portfolio-7.jpg" alt="Portfolio Item 7"></a></div>
+                    <div class="gallery-item" data-category="photo portraits"><a href="#" title="View Details"><img src="images/placeholder-portfolio-8.jpg" alt="Portfolio Item 8"></a></div>
+                    <div class="gallery-item" data-category="photo landscape"><a href="#" title="View Details"><img src="images/placeholder-portfolio-9.jpg" alt="Portfolio Item 9"></a></div>
+                    <div class="gallery-item" data-category="video"><a href="#" title="View Details"><img src="images/placeholder-portfolio-10.jpg" alt="Portfolio Item 10"></a></div>
+                    <div class="gallery-item" data-category="photo portraits"><a href="#" title="View Details"><img src="images/placeholder-portfolio-11.jpg" alt="Portfolio Item 11"></a></div>
+                    <div class="gallery-item" data-category="photo landscape"><a href="#" title="View Details"><img src="images/placeholder-portfolio-12.jpg" alt="Portfolio Item 12"></a></div>
+                    <!-- Add many more... -->
                 </div>
 
-                <!-- Optional: Pagination could go here if portfolio is very large -->
+                <!-- Optional: Pagination -->
+                <!-- <div class="pagination text-center" style="margin-top: 3rem;">...</div> -->
 
             </div>
         </section>
-
     </main>
 
-    <!-- Re-use the same footer -->
     <footer id="main-footer">
+        <!-- Identical Footer structure as index.html -->
         <div class="container footer-container">
             <div class="footer-links">
                  <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
             </div>
             <div class="social-links">
-                <!-- Add social media icons/links here -->
-                <a href="#">FB</a> | <a href="#">IG</a> | <a href="#">YT</a>
+                <a href="#" aria-label="Facebook">FB</a> | <a href="#" aria-label="Instagram">IG</a> | <a href="#" aria-label="YouTube">YT</a>
             </div>
             <div class="copyright">
-                © <span id="year"></span> Your Name. All Rights Reserved.
+                © <span id="year"></span> RF Gallardo. All Rights Reserved.
             </div>
         </div>
     </footer>
 
-    <!-- Link to the same script file -->
     <script src="script.js"></script>
-    <!-- Add specific JS for portfolio page if needed (e.g., filtering, lightbox init) -->
-    <!-- <script src="portfolio-script.js"></script> -->
 </body>
 </html>
