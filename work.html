@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Work | RF Gallardo</title>
+
+    <!-- GLightbox CSS (Add this line) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,7 +24,7 @@
             <nav id="main-nav">
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="work.html">Work</a></li>
+                    <li><a href="work.html">Work</a></li> <!-- JS will add .active -->
                     <li><a href="shop.html">Shop</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="contact.html">Contact</a></li>
@@ -48,56 +52,89 @@
 
 
                 <div class="gallery-grid">
-                    <!-- Gallery items with data-category attributes -->
-                    <!-- Example: Item 1 is Photography and Landscape -->
+                    <!-- Gallery items updated for GLightbox -->
+
                     <div class="gallery-item" data-category="photo landscape">
-                        <a href="#" title="View Landscape Photo Details"><img src="images/IMG_4267-1.jpg" alt="Gladys at Kandungaw Peak"></a>
+                        <a href="images/placeholder-portfolio-1.jpg" class="glightbox" data-gallery="portfolio-gallery" title="Alpine Lake View">
+                            <img src="images/placeholder-portfolio-1.jpg" alt="Portfolio Item 1 - Landscape">
+                        </a>
                     </div>
-                     <!-- Example: Item 2 is Photography and Portrait -->
+
                     <div class="gallery-item" data-category="photo portraits">
-                        <a href="#" title="View Portrait Photo Details"><img src="images/placeholder-portfolio-2.jpg" alt="Portfolio Item 2 - Portrait"></a>
+                        <a href="images/placeholder-portfolio-2.jpg" class="glightbox" data-gallery="portfolio-gallery" title="Urban Portrait">
+                            <img src="images/placeholder-portfolio-2.jpg" alt="Portfolio Item 2 - Portrait">
+                        </a>
                     </div>
-                     <!-- Example: Item 3 is Videography -->
+
                     <div class="gallery-item" data-category="video">
-                        <a href="#" title="View Video Project Details"><img src="images/placeholder-portfolio-3.jpg" alt="Portfolio Item 3 - Video"></a>
+                        <a href="images/placeholder-portfolio-3.jpg" class="glightbox" data-gallery="portfolio-gallery" title="Video Project Still Frame">
+                            <img src="images/placeholder-portfolio-3.jpg" alt="Portfolio Item 3 - Video">
+                        </a>
+                        <!-- If linking to an actual video:
+                        <a href="https://www.youtube.com/watch?v=VIDEO_ID" class="glightbox" data-gallery="portfolio-gallery" title="Video Project Title">
+                           <img src="images/placeholder-portfolio-3.jpg" alt="Portfolio Item 3 - Video">
+                        </a>
+                         Or link to a video file:
+                         <a href="videos/my_video.mp4" class="glightbox" data-gallery="portfolio-gallery" title="Video Project Title">
+                           <img src="images/placeholder-portfolio-3.jpg" alt="Portfolio Item 3 - Video">
+                        </a>
+                        -->
                     </div>
-                     <!-- Example: Item 4 is Photography and Landscape -->
+
                     <div class="gallery-item" data-category="photo landscape">
-                        <a href="#" title="View Another Landscape Photo"><img src="images/placeholder-portfolio-4.jpg" alt="Portfolio Item 4 - Landscape"></a>
+                        <a href="images/placeholder-portfolio-4.jpg" class="glightbox" data-gallery="portfolio-gallery" title="Desert Sunset">
+                            <img src="images/placeholder-portfolio-4.jpg" alt="Portfolio Item 4 - Landscape">
+                        </a>
                     </div>
-                    <!-- Example: Item 5 is Photography and Portrait -->
+
                     <div class="gallery-item" data-category="photo portraits">
-                        <a href="#" title="View Another Portrait Photo"><img src="images/placeholder-portfolio-5.jpg" alt="Portfolio Item 5 - Portrait"></a>
+                        <a href="images/placeholder-portfolio-5.jpg" class="glightbox" data-gallery="portfolio-gallery" title="Studio Fashion Shoot">
+                            <img src="images/placeholder-portfolio-5.jpg" alt="Portfolio Item 5 - Portrait">
+                        </a>
                     </div>
-                     <!-- Example: Item 6 is Videography -->
+
                     <div class="gallery-item" data-category="video">
-                        <a href="#" title="View Short Film Details"><img src="images/placeholder-portfolio-6.jpg" alt="Portfolio Item 6 - Video"></a>
+                         <a href="images/placeholder-portfolio-6.jpg" class="glightbox" data-gallery="portfolio-gallery" title="Short Film Scene">
+                            <img src="images/placeholder-portfolio-6.jpg" alt="Portfolio Item 6 - Video">
+                        </a>
                     </div>
-                     <!-- Example: Item 7 is Photography, Landscape, and maybe could be 'travel' if you add that filter -->
+
                     <div class="gallery-item" data-category="photo landscape">
-                        <a href="#" title="View Mountain Range Photo"><img src="images/placeholder-portfolio-7.jpg" alt="Portfolio Item 7 - Landscape"></a>
+                        <a href="images/placeholder-portfolio-7.jpg" class="glightbox" data-gallery="portfolio-gallery" title="Mountain Range Panorama">
+                            <img src="images/placeholder-portfolio-7.jpg" alt="Portfolio Item 7 - Landscape">
+                        </a>
                     </div>
-                    <!-- Example: Item 8 is Photography and Portrait -->
+
                     <div class="gallery-item" data-category="photo portraits">
-                         <a href="#" title="View Studio Portrait"><img src="images/placeholder-portfolio-8.jpg" alt="Portfolio Item 8 - Portrait"></a>
+                         <a href="images/placeholder-portfolio-8.jpg" class="glightbox" data-gallery="portfolio-gallery" title="Candid Street Portrait">
+                            <img src="images/placeholder-portfolio-8.jpg" alt="Portfolio Item 8 - Portrait">
+                        </a>
                     </div>
-                     <!-- Example: Item 9 is Photography and Landscape -->
+
                     <div class="gallery-item" data-category="photo landscape">
-                        <a href="#" title="View Coastal Landscape"><img src="images/placeholder-portfolio-9.jpg" alt="Portfolio Item 9 - Landscape"></a>
+                        <a href="images/placeholder-portfolio-9.jpg" class="glightbox" data-gallery="portfolio-gallery" title="Coastal Cliffs">
+                            <img src="images/placeholder-portfolio-9.jpg" alt="Portfolio Item 9 - Landscape">
+                        </a>
                     </div>
-                    <!-- Example: Item 10 is Videography and maybe 'commercial' -->
+
                     <div class="gallery-item" data-category="video">
-                        <a href="#" title="View Commercial Video Project"><img src="images/placeholder-portfolio-10.jpg" alt="Portfolio Item 10 - Video"></a>
+                         <a href="images/placeholder-portfolio-10.jpg" class="glightbox" data-gallery="portfolio-gallery" title="Commercial Ad Still">
+                            <img src="images/placeholder-portfolio-10.jpg" alt="Portfolio Item 10 - Video">
+                        </a>
                     </div>
-                    <!-- Example: Item 11 is Photography and Portrait -->
+
                     <div class="gallery-item" data-category="photo portraits">
-                        <a href="#" title="View Candid Portrait"><img src="images/placeholder-portfolio-11.jpg" alt="Portfolio Item 11 - Portrait"></a>
+                         <a href="images/placeholder-portfolio-11.jpg" class="glightbox" data-gallery="portfolio-gallery" title="Environmental Portrait">
+                            <img src="images/placeholder-portfolio-11.jpg" alt="Portfolio Item 11 - Portrait">
+                        </a>
                     </div>
-                    <!-- Example: Item 12 is Photography and Landscape -->
+
                     <div class="gallery-item" data-category="photo landscape">
-                         <a href="#" title="View Forest Photo"><img src="images/placeholder-portfolio-12.jpg" alt="Portfolio Item 12 - Landscape"></a>
+                         <a href="images/placeholder-portfolio-12.jpg" class="glightbox" data-gallery="portfolio-gallery" title="Misty Forest Path">
+                            <img src="images/placeholder-portfolio-12.jpg" alt="Portfolio Item 12 - Landscape">
+                        </a>
                     </div>
-                    <!-- Add many more items with appropriate data-category attributes -->
+                    <!-- Add many more items as needed, following the same pattern -->
                 </div>
 
                 <!-- Optional: Pagination -->
@@ -122,6 +159,10 @@
         </div>
     </footer>
 
+    <!-- GLightbox JS (Add this line) -->
+    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+
+    <!-- Your Custom JS (Must be AFTER GLightbox JS) -->
     <script src="script.js"></script>
 </body>
 </html>
