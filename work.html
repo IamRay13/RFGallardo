@@ -5,18 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Work | RF Gallardo</title>
 
-    <!-- GLightbox CSS (Add this line) -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
 
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="style.css"> <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <style>
+        .fb-reel-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            max-width: 100%;
+            padding: 0;
+        }
+        .fb-reel-container iframe {
+            max-width: 100%;
+            display: block;
+        }
+        .gallery-item.video-item {
+            padding: 10px;
+            background-color: var(--background-dark);
+        }
+    </style>
 </head>
 <body>
 
     <header id="main-header">
-        <!-- Identical Header structure -->
         <div class="container header-container">
             <div class="logo">
                 <a href="index.html">RF GALLARDO</a>
@@ -24,7 +39,7 @@
             <nav id="main-nav">
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="work.html">Work</a></li> <!-- JS will add .active -->
+                    <li><a href="work.html">Work</a></li>
                     <li><a href="shop.html">Shop</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="contact.html">Contact</a></li>
@@ -35,134 +50,164 @@
     </header>
 
     <main>
-        <!-- Portfolio Page Content Section -->
         <section id="portfolio-page-section" class="content-section page-intro">
             <div class="container">
                 <h2>My Work</h2>
                 <p class="subtitle">A curated collection of photography and videography projects.</p>
 
-                <!-- Filter buttons with data-filter attributes -->
                 <div class="filter-buttons text-center" style="margin-bottom: 3rem;">
                     <button class="btn btn-filter active" data-filter="all">All</button>
-                    <button class="btn btn-filter" data-filter="photo">Photography</button>
-                    <button class="btn btn-filter" data-filter="video">Videography</button>
+                    <button class="btn btn-filter" data-filter="wedding">Weddings</button>
+                    <button class="btn btn-filter" data-filter="debut">Debuts</button>
+                    <button class="btn btn-filter" data-filter="prenup">Prenups</button>
                     <button class="btn btn-filter" data-filter="portraits">Portraits</button>
+                    <button class="btn btn-filter" data-filter="corporate">Corporate</button>
                     <button class="btn btn-filter" data-filter="landscape">Landscapes</button>
+                    <button class="btn btn-filter" data-filter="video">Videography</button>
                 </div>
-
 
                 <div class="gallery-grid">
-                    <!-- Gallery items updated for GLightbox -->
 
-                    <div class="gallery-item" data-category="photo landscape">
-                        <a href="images/IMG_8350.jpg" class="glightbox" data-gallery="portfolio-gallery" title="Gladys at Mt. Manunggal">
-                            <img src="images/IMG_8350.jpg" alt="Gladys at Mt. Manunggal">
+                    <div class="gallery-item" data-category="wedding">
+                        <a href="album-wedding-1.html" title="View Joy & Rod's Wedding Album">
+                            <img src="https://placehold.co/600x400/a7f3d0/1f2937?text=Joy+%26+Rod%27s+Wedding"
+                                 onerror="this.onerror=null; this.src='https://placehold.co/600x400/cccccc/ffffff?text=Image+Not+Found';"
+                                 alt="Joy & Rod's Wedding Album Cover">
+                             <div class="album-title-container">
+                                 <h3>Joy & Rod's Wedding</h3>
+                                 <p>Tagbilaran City</p>
+                             </div>
                         </a>
                     </div>
 
-                    <div class="gallery-item" data-category="photo portraits">
-                        <a href="images/IMG_8009.jpg" class="glightbox" data-gallery="portfolio-gallery" title="Urban Portrait">
-                            <img src="images/IMG_800.jpg" alt="Portfolio Item 2 - Portrait">
+                    <div class="gallery-item" data-category="debut">
+                        <a href="album-debut-1.html" title="View Gladys' Debut Album">
+                             <img src="https://placehold.co/600x400/fecaca/1f2937?text=Gladys%27+Debut"
+                                 onerror="this.onerror=null; this.src='https://placehold.co/400x300/cccccc/ffffff?text=Image+Not+Found';"
+                                 alt="Gladys' Debut Album Cover">
+                             <div class="album-title-container">
+                                 <h3>Gladys' Debut</h3>
+                                 <p>Mandaue City</p>
+                             </div>
                         </a>
                     </div>
 
-                    <div class="gallery-item" data-category="video">
-                        <a href="images/placeholder-portfolio-3.jpg" class="glightbox" data-gallery="portfolio-gallery" title="Video Project Still Frame">
-                            <img src="images/placeholder-portfolio-3.jpg" alt="Portfolio Item 3 - Video">
-                        </a>
-                        <!-- If linking to an actual video:
-                        <a href="https://www.youtube.com/watch?v=VIDEO_ID" class="glightbox" data-gallery="portfolio-gallery" title="Video Project Title">
-                           <img src="images/placeholder-portfolio-3.jpg" alt="Portfolio Item 3 - Video">
-                        </a>
-                         Or link to a video file:
-                         <a href="videos/my_video.mp4" class="glightbox" data-gallery="portfolio-gallery" title="Video Project Title">
-                           <img src="images/placeholder-portfolio-3.jpg" alt="Portfolio Item 3 - Video">
-                        </a>
-                        -->
-                    </div>
-
-                    <div class="gallery-item" data-category="photo landscape">
-                        <a href="images/IMG_8009.jpg" class="glightbox" data-gallery="portfolio-gallery" title="Desert Sunset">
-                            <img src="images/IMG_8009.jpg" alt="Gladys at Mt. Manunggal">
+                    <div class="gallery-item" data-category="prenup">
+                        <a href="album-prenup-1.html" title="View Beach Prenup Album">
+                             <img src="https://placehold.co/600x400/bfdbfe/1f2937?text=Beach+Prenup"
+                                 onerror="this.onerror=null; this.src='https://placehold.co/400x300/cccccc/ffffff?text=Image+Not+Found';"
+                                 alt="Beach Prenup Album Cover">
+                            <div class="album-title-container">
+                                 <h3>Beach Prenup Session</h3>
+                                 <p>Panglao Island</p>
+                             </div>
                         </a>
                     </div>
 
-                    <div class="gallery-item" data-category="photo portraits">
-                        <a href="images/placeholder-portfolio-5.jpg" class="glightbox" data-gallery="portfolio-gallery" title="Studio Fashion Shoot">
-                            <img src="images/placeholder-portfolio-5.jpg" alt="Portfolio Item 5 - Portrait">
+                    <div class="gallery-item" data-category="corporate">
+                        <a href="album-corporate-1.html" title="View Tech Conference Album">
+                             <img src="https://placehold.co/600x400/fed7aa/1f2937?text=Tech+Conference"
+                                 onerror="this.onerror=null; this.src='https://placehold.co/400x300/cccccc/ffffff?text=Image+Not+Found';"
+                                 alt="Tech Conference Album Cover">
+                             <div class="album-title-container">
+                                 <h3>Tech Conference 2025</h3>
+                                 <p>Cebu City</p>
+                             </div>
                         </a>
                     </div>
 
-                    <div class="gallery-item" data-category="video">
-                         <a href="images/placeholder-portfolio-6.jpg" class="glightbox" data-gallery="portfolio-gallery" title="Short Film Scene">
-                            <img src="images/placeholder-portfolio-6.jpg" alt="Portfolio Item 6 - Video">
+                    <div class="gallery-item" data-category="portraits">
+                        <a href="album-portraits-1.html" title="View Studio Portraits Album">
+                             <img src="https://placehold.co/600x400/d1fae5/1f2937?text=Studio+Portraits"
+                                 onerror="this.onerror=null; this.src='https://placehold.co/400x300/cccccc/ffffff?text=Image+Not+Found';"
+                                 alt="Studio Portraits Album Cover">
+                             <div class="album-title-container">
+                                 <h3>Studio Portrait Series</h3>
+                                 <p>Various Clients</p>
+                             </div>
                         </a>
                     </div>
 
-                    <div class="gallery-item" data-category="photo landscape">
-                        <a href="images/Glad at Mt. Hambubuyog.jpg" class="glightbox" data-gallery="portfolio-gallery" title="Glad at Mt. Hambubuyog">
-                            <img src="images/Glad at Mt. Hambubuyog.jpg" alt="Glad at Mt. Hambubuyog">
+                    <div class="gallery-item" data-category="landscape">
+                        <a href="album-landscape-1.html" title="View Mountain Landscapes Album">
+                             <img src="https://placehold.co/600x400/e0e7ff/1f2937?text=Mountain+Vistas"
+                                 onerror="this.onerror=null; this.src='https://placehold.co/400x300/cccccc/ffffff?text=Image+Not+Found';"
+                                 alt="Mountain Landscapes Album Cover">
+                            <div class="album-title-container">
+                                 <h3>Mountain Landscapes</h3>
+                                 <p>Central Visayas</p>
+                             </div>
                         </a>
                     </div>
 
-                    <div class="gallery-item" data-category="photo portraits">
-                         <a href="images/placeholder-portfolio-8.jpg" class="glightbox" data-gallery="portfolio-gallery" title="Candid Street Portrait">
-                            <img src="images/placeholder-portfolio-8.jpg" alt="Portfolio Item 8 - Portrait">
+                     <div class="gallery-item" data-category="video">
+                        <a href="album-video-1.html" title="View Wedding Film Album">
+                             <img src="https://placehold.co/600x400/fef3c7/1f2937?text=Wedding+Film"
+                                 onerror="this.onerror=null; this.src='https://placehold.co/400x300/cccccc/ffffff?text=Image+Not+Found';"
+                                 alt="Wedding Film Album Cover">
+                             <div class="album-title-container">
+                                 <h3>Highlights Wedding Film</h3>
+                                 <p>Videography</p>
+                             </div>
                         </a>
                     </div>
 
-                    <div class="gallery-item" data-category="photo landscape">
-                        <a href="images/Hanny.jpg" class="glightbox" data-gallery="portfolio-gallery" title="Hanny at Kandungaw Peak">
-                                <img src="images/Hanny.jpg" alt="Hanny at Kandungaw Peak">
+                     <div class="gallery-item" data-category="wedding">
+                        <a href="album-wedding-2.html" title="View Mark & Anna's Wedding Album">
+                             <img src="https://placehold.co/600x400/a7f3d0/1f2937?text=Mark+%26+Anna"
+                                 onerror="this.onerror=null; this.src='https://placehold.co/400x300/cccccc/ffffff?text=Image+Not+Found';"
+                                 alt="Mark & Anna Wedding Album Cover">
+                            <div class="album-title-container">
+                                 <h3>Mark & Anna's Wedding</h3>
+                                 <p>Cebu City</p>
+                             </div>
                         </a>
                     </div>
 
-                    <div class="gallery-item" data-category="video">
-                         <a href="images/placeholder-portfolio-10.jpg" class="glightbox" data-gallery="portfolio-gallery" title="Commercial Ad Still">
-                            <img src="images/placeholder-portfolio-10.jpg" alt="Portfolio Item 10 - Video">
+                     <div class="gallery-item" data-category="portraits">
+                        <a href="album-portraits-2.html" title="View Outdoor Portraits Album">
+                             <img src="https://placehold.co/600x400/d1fae5/1f2937?text=Outdoor+Portraits"
+                                 onerror="this.onerror=null; this.src='https://placehold.co/400x300/cccccc/ffffff?text=Image+Not+Found';"
+                                 alt="Outdoor Portraits Album Cover">
+                             <div class="album-title-container">
+                                 <h3>Outdoor Portraits</h3>
+                                 <p>Nature Sessions</p>
+                             </div>
                         </a>
                     </div>
 
-                    <div class="gallery-item" data-category="photo portraits">
-                         <a href="images/placeholder-portfolio-11.jpg" class="glightbox" data-gallery="portfolio-gallery" title="Environmental Portrait">
-                            <img src="images/placeholder-portfolio-11.jpg" alt="Portfolio Item 11 - Portrait">
+                     <div class="gallery-item" data-category="landscape">
+                        <a href="album-landscape-2.html" title="View Coastal Landscapes Album">
+                             <img src="https://placehold.co/600x400/e0e7ff/1f2937?text=Coastal+Scenes"
+                                 onerror="this.onerror=null; this.src='https://placehold.co/400x300/cccccc/ffffff?text=Image+Not+Found';"
+                                 alt="Coastal Landscapes Album Cover">
+                            <div class="album-title-container">
+                                 <h3>Coastal Landscapes</h3>
+                                 <p>Bohol Coastline</p>
+                             </div>
                         </a>
                     </div>
 
-                    <div class="gallery-item" data-category="photo landscape">
-                         <a href="images/Ecar.jpg" class="glightbox" data-gallery="portfolio-gallery" title="Ecar at Kandungaw Peak">
-                            <img src="images/Ecar.jpg" alt="Ecar at Kandungaw Peak">
-                        </a>
-                    </div>
-                    <!-- Add many more items as needed, following the same pattern -->
-                </div>
-
-                <!-- Optional: Pagination -->
-                <!-- <div class="pagination text-center" style="margin-top: 3rem;">...</div> -->
-
-            </div>
+                    </div> </div>
         </section>
     </main>
 
     <footer id="main-footer">
-        <!-- Identical Footer structure -->
         <div class="container footer-container">
             <div class="footer-links">
                  <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
             </div>
             <div class="social-links">
-                <a href="#" aria-label="Facebook">FB</a> | <a href="#" aria-label="Instagram">IG</a> | <a href="#" aria-label="YouTube">YT</a>
+                 <a href="https://www.facebook.com/nomar.sellhtrow.7/" aria-label="Facebook">FB</a> | <a href="https://www.instagram.com/ramsy.tariao/" aria-label="Instagram">IG</a> | <a href="#" aria-label="YouTube">YT</a>
             </div>
             <div class="copyright">
-                © <span id="year"></span> RF Gallardo. All Rights Reserved.
+                 © <span id="year"></span> RF Gallardo. All Rights Reserved.
             </div>
         </div>
     </footer>
 
-    <!-- GLightbox JS (Add this line) -->
     <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
 
-    <!-- Your Custom JS (Must be AFTER GLightbox JS) -->
     <script src="script.js"></script>
 </body>
 </html>

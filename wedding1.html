@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>John & Jane's Wedding | RF Gallardo</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <style>
+        #photo-gallery img {
+            width: 100%; /* Make image fill grid cell */
+            height: 150px; /* Fixed height for consistency */
+            object-fit: cover; /* Cover the area, cropping if needed */
+            border-radius: 5px; /* Optional: match gallery item style */
+            background-color: var(--background-light); /* Placeholder background */
+        }
+        /* Ensure gallery grid styles from style.css apply */
+        #photo-gallery {
+            display: grid; /* Assuming style.css uses grid */
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Example grid */
+            gap: 15px; /* Example gap */
+        }
+    </style>
+</head>
+<body>
+
+    <header id="main-header">
+        <div class="container header-container">
+            <div class="logo">
+                <a href="index.html">RF GALLARDO</a>
+            </div>
+            <nav id="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="work.html">Work</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <button id="mobile-menu-toggle">MENU</button>
+        </div>
+    </header>
+
+    <main>
+        <section id="album-content" class="content-section page-intro">
+            <div class="container">
+
+                <div style="margin-bottom: 2rem;">
+                     <a href="work.html" class="btn btn-secondary">&larr; Back to Work Overview</a>
+                </div>
+
+                <header style="text-align: center; margin-bottom: 3rem;">
+                    <h1>John & Jane's Wedding</h1>
+                    <p class="subtitle">A beautiful day celebrating their love.</p>
+                </header>
+
+                <div id="photo-gallery" class="gallery-grid">
+                    </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer id="main-footer">
+        <div class="container footer-container">
+            <div class="footer-links">
+                 <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+            </div>
+            <div class="social-links">
+                 <a href="https://www.facebook.com/nomar.sellhtrow.7/" aria-label="Facebook">FB</a> | <a href="https://www.instagram.com/ramsy.tariao/" aria-label="Instagram">IG</a> | <a href="#" aria-label="YouTube">YT</a>
+            </div>
+            <div class="copyright">
+                 © <span id="year"></span> RF Gallardo. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const galleryContainer = document.getElementById('photo-gallery');
+            const eventName = "John & Jane's Wedding"; // CHANGE THIS FOR EACH FILE
+            const imageCount = 100; // Number of images to generate
+
+            if (galleryContainer) {
+                for (let i = 1; i <= imageCount; i++) {
+                    const imgElement = document.createElement('img');
+                    let imageUrl = '';
+
+                    // Alternate between image sources
+                    const sourceChoice = i % 3;
+                    if (sourceChoice === 1) {
+                        // via.placeholder.com
+                        imageUrl = `https://via.placeholder.com/150?text=Photo+${i}`;
+                    } else if (sourceChoice === 2) {
+                        // picsum.photos
+                        imageUrl = `https://picsum.photos/seed/${eventName.replace(/\s+/g, '-')}-${i}/150/150`; // Use seed for consistency
+                    } else { // sourceChoice === 0
+                        // source.unsplash.com
+                        // Note: Unsplash random might repeat or show unrelated images. Seeding is better if possible.
+                        // Using sig={i} provides *some* variation but isn't true seeding.
+                        imageUrl = `https://source.unsplash.com/random/150x150?sig=${i}&wedding`; // Added 'wedding' keyword
+                    }
+
+                    imgElement.src = imageUrl;
+                    imgElement.alt = `${eventName} - Photo ${i}`;
+                    imgElement.loading = 'lazy'; // Add lazy loading for performance
+
+                    // Add error handling for broken images
+                    imgElement.onerror = function() {
+                        this.onerror=null; // Prevent infinite loop if placeholder fails
+                        this.src='https://via.placeholder.com/150?text=Error';
+                        this.alt = `${eventName} - Photo ${i} (Load Error)`;
+                    };
+
+                    galleryContainer.appendChild(imgElement);
+                }
+            } else {
+                console.error("Gallery container #photo-gallery not found.");
+            }
+        });
+    </script>
+
+</body>
+</html>

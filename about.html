@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About | RF Gallardo</title> <!-- Changed Title -->
-    <link rel="stylesheet" href="style.css">
+    <title>About | RF Gallardo</title> <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
@@ -12,7 +11,6 @@
 <body>
 
     <header id="main-header">
-        <!-- Identical Header structure -->
         <div class="container header-container">
             <div class="logo">
                 <a href="index.html">RF GALLARDO</a>
@@ -22,8 +20,7 @@
                     <li><a href="index.html">Home</a></li>
                     <li><a href="work.html">Work</a></li>
                     <li><a href="shop.html">Shop</a></li>
-                    <li><a href="about.html">About</a></li> <!-- JS will add .active -->
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="about.html">About</a></li> <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
             <button id="mobile-menu-toggle">MENU</button>
@@ -31,7 +28,6 @@
     </header>
 
     <main>
-        <!-- About Page Content Section -->
         <section id="about-page-section" class="content-section page-intro">
             <div class="container">
                 <h2>About RF Gallardo</h2>
@@ -39,16 +35,20 @@
 
                 <div class="about-page-content">
                     <div class="about-main-image text-center" style="margin-bottom: 3rem;">
-                        <img src="images/placeholder-profile-large.jpg" alt="RF Gallardo - Main Profile" style="max-width: 400px; border-radius: 50%;">
+                        <img src="images/placeholder-profile-large.jpg"
+                             alt="RF Gallardo - Main Profile"
+                             style="max-width: 400px; border-radius: 50%; margin: 0 auto; display: block;"
+                             onerror="this.onerror=null; this.src='https://placehold.co/400x400/cccccc/ffffff?text=Profile';">
                     </div>
 
                     <div class="about-text-block" style="max-width: 800px; margin: 0 auto;">
                         <h3>My Journey</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <p>From a young age, I was captivated by the power of images to tell stories and evoke emotions. What started as a hobby quickly grew into a passion, leading me down the path of professional photography and filmmaking. Based here in Mandaue City, I find inspiration everywhere, from the vibrant city life to the stunning natural beauty of the Central Visayas.</p>
+                        <p>Every click of the shutter and every recorded frame is an opportunity to capture a unique moment in time. I strive to create visuals that are not only aesthetically pleasing but also authentic and meaningful, reflecting the true essence of the subject, whether it's a couple on their wedding day, a brand's identity, or the breathtaking landscapes of our islands.</p>
 
                         <h3 style="margin-top: 2rem;">Philosophy</h3>
-                        <p>Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis et commodo pharetra, est eros bibendum elit, nec luctus magna felis sollicitudin mauris. Integer in mauris eu nibh euismod gravida.</p>
+                        <p>My approach is built on connection and collaboration. I believe the best results come from understanding my clients' vision and working together to bring it to life. Whether it's a planned photoshoot or capturing candid moments, I aim for a relaxed and natural atmosphere, allowing genuine emotions and interactions to shine through.</p>
+                        <p>Technical skill is important, but for me, the heart of visual storytelling lies in observation, empathy, and the ability to see the extraordinary in the ordinary. It's about more than just taking pictures; it's about preserving memories and creating art that resonates.</p>
 
                          <h3 style="margin-top: 2rem;">Gear Highlights</h3>
                          <p>While gear doesn't make the creator, here's some of the trusted equipment I use:</p>
@@ -69,16 +69,15 @@
     </main>
 
     <footer id="main-footer">
-        <!-- Identical Footer structure -->
-         <div class="container footer-container">
+        <div class="container footer-container">
             <div class="footer-links">
                  <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
             </div>
             <div class="social-links">
-                <a href="#" aria-label="Facebook">FB</a> | <a href="#" aria-label="Instagram">IG</a> | <a href="#" aria-label="YouTube">YT</a>
+                 <a href="https://www.facebook.com/nomar.sellhtrow.7/" aria-label="Facebook">FB</a> | <a href="https://www.instagram.com/ramsy.tariao/" aria-label="Instagram">IG</a> | <a href="#" aria-label="YouTube">YT</a>
             </div>
             <div class="copyright">
-                © <span id="year"></span> RF Gallardo. All Rights Reserved.
+                 © <span id="year"></span> RF Gallardo. All Rights Reserved.
             </div>
         </div>
     </footer>
