@@ -1,330 +1,182 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Work | RF Gallardo</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Work | RF Gallardo</title>
 
-  <!-- External Stylesheets -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
-  <link rel="stylesheet" href="style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
 
-  <!-- Custom Inline Styles -->
-  <style>
-    .fb-reel-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      max-width: 100%;
-      padding: 0;
-    }
-    .fb-reel-container iframe {
-      max-width: 100%;
-      display: block;
-    }
-    .gallery-item.video-item {
-      padding: 10px;
-      background-color: var(--background-dark);
-    }
-  </style>
+    <link rel="stylesheet" href="style.css"> <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <style>
+        .fb-reel-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            max-width: 100%;
+            padding: 0;
+        }
+        .fb-reel-container iframe {
+            max-width: 100%;
+            display: block;
+        }
+        .gallery-item.video-item {
+            padding: 10px;
+            background-color: var(--background-dark);
+        }
+    </style>
 </head>
 <body>
 
-  <header id="main-header">
-    <div class="container header-container">
-      <div class="logo">
-        <a href="index.html">RF GALLARDO</a>
-      </div>
-      <nav id="main-nav">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="work.html">Work</a></li>
-          <li><a href="shop.html">Shop</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
-      <button id="mobile-menu-toggle">MENU</button>
-    </div>
-  </header>
-
-  <main>
-    <section id="portfolio-page-section" class="content-section page-intro">
-      <div class="container">
-        <h2>My Work</h2>
-        <p class="subtitle">A curated collection of photography and videography projects.</p>
-
-        <!-- Filter Buttons -->
-        <div class="filter-buttons text-center" style="margin-bottom: 3rem;">
-          <button class="btn btn-filter active" data-filter="all">All</button>
-          <button class="btn btn-filter" data-filter="wedding">Weddings</button>
-          <button class="btn btn-filter" data-filter="debut">Debuts</button>
-          <button class="btn btn-filter" data-filter="prenup">Prenups</button>
-          <button class="btn btn-filter" data-filter="portraits">Portraits</button>
-          <button class="btn btn-filter" data-filter="corporate">Corporate</button>
-          <button class="btn btn-filter" data-filter="landscape">Landscapes</button>
-          <button class="btn btn-filter" data-filter="video">Videography</button>
+    <header id="main-header">
+        <div class="container header-container">
+            <div class="logo">
+                <a href="index.html">RF GALLARDO</a>
+            </div>
+            <nav id="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="work.html">Work</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <button id="mobile-menu-toggle">MENU</button>
         </div>
+    </header>
 
-        <!-- Gallery Grid -->
-        <div class="gallery-grid">
-          <!-- Wedding: Renn & Hannah -->
-          <div class="gallery-item" data-category="wedding">
-            <a href="Wedding/album-wedding-1.html" title="View Renn &amp; Hannah's Wedding Album">
-              <img src="images/Hannah x Renn/IMG_0359.jpg" 
-                   onerror="this.onerror=null; this.src='https://placehold.co/600x400/cccccc/ffffff?text=Image+Not+Found';" 
-                   alt="Renn & Hannah's Wedding Album Cover">
-              <div class="album-title-container">
-                <h3>Renn &amp; Hannah</h3>
-                <p>Consolacion, Cebu</p>
-              </div>
-            </a>
-          </div>
+    <main>
+        <section id="portfolio-page-section" class="content-section page-intro">
+            <div class="container">
+                <h2>My Work</h2>
+                <p class="subtitle">A curated collection of photography and videography projects.</p>
 
-          <!-- Debut: Gladys' Debut (original debut item) -->
-          <div class="gallery-item" data-category="debut">
-            <a href="Debut/album-debut-1.html" title="View Gladys' Debut Album">
-              <img src="https://placehold.co/600x400/fecaca/1f2937?text=Gladys%27+Debut"
-                   onerror="this.onerror=null; this.src='https://placehold.co/400x300/cccccc/ffffff?text=Image+Not+Found';" 
-                   alt="Gladys' Debut Album Cover">
-              <div class="album-title-container">
-                <h3>Gladys' Debut</h3>
-                <p>Mandaue City</p>
-              </div>
-            </a>
-          </div>
+                <div class="filter-buttons text-center" style="margin-bottom: 3rem;">
+                    <button class="btn btn-filter active" data-filter="all">All</button>
+                    <button class="btn btn-filter" data-filter="wedding">Weddings</button>
+                    <button class="btn btn-filter" data-filter="debut">Debuts</button>
+                    <button class="btn btn-filter" data-filter="prenup">Prenups</button>
+                    <button class="btn btn-filter" data-filter="portraits">Portraits</button>
+                    <button class="btn btn-filter" data-filter="corporate">Corporate</button>
+                    <button class="btn btn-filter" data-filter="landscape">Landscapes</button>
+                    <button class="btn btn-filter" data-filter="video">Videography</button>
+                </div>
 
-          <!-- DEBUT ALBUMS - Additional 10 Debut Items -->
-          <!-- 1. Maria's Debut -->
-          <div class="gallery-item" data-category="debut">
-            <a href="Debut/maria_debut.html" title="View Maria's Debut Album">
-              <img src="https://placehold.co/600x400/fecaca/1f2937?text=Maria%27s+Debut"
-                   onerror="this.onerror=null; this.src='https://placehold.co/400x300/cccccc/ffffff?text=Image+Not+Found';" 
-                   alt="Maria's Debut Album Cover">
-              <div class="album-title-container">
-                <h3>Maria's Debut</h3>
-                <p>Mandaue City</p>
-              </div>
-            </a>
-          </div>
+                <div class="gallery-grid">
 
-          <!-- 2. Sophia's Debut -->
-          <div class="gallery-item" data-category="debut">
-            <a href="sophia_debut.html" title="View Sophia's Debut Album">
-              <img src="https://placehold.co/600x400/fecaca/1f2937?text=Sophia%27s+Debut"
-                   onerror="this.onerror=null; this.src='https://placehold.co/400x300/cccccc/ffffff?text=Image+Not+Found';" 
-                   alt="Sophia's Debut Album Cover">
-              <div class="album-title-container">
-                <h3>Sophia's Debut</h3>
-                <p>Mandaue City</p>
-              </div>
-            </a>
-          </div>
+                    <div class="gallery-item" data-category="wedding">
+                        <a href="album-wedding-1.html" title="View Renn & Hannah's Wedding Album">
+                            <img src="images/Hannah x Renn/IMG_0359.jpg"
+                                 onerror="this.onerror=null; this.src='https://placehold.co/600x400/cccccc/ffffff?text=Image+Not+Found';"
+                                 alt="Joy & Rod's Wedding Album Cover">
+                             <div class="album-title-container">
+                                 <h3>Renn & Hannah</h3>
+                                 <p>Consolacion, Cebu</p>
+                             </div>
+                        </a>
+                    </div>
 
-          <!-- 3. Isabella's Debut -->
-          <div class="gallery-item" data-category="debut">
-            <a href="Debut/isabella_debut.html" title="View Isabella's Debut Album">
-              <img src="https://placehold.co/600x400/fecaca/1f2937?text=Isabella%27s+Debut"
-                   onerror="this.onerror=null; this.src='https://placehold.co/400x300/cccccc/ffffff?text=Image+Not+Found';" 
-                   alt="Isabella's Debut Album Cover">
-              <div class="album-title-container">
-                <h3>Isabella's Debut</h3>
-                <p>Mandaue City</p>
-              </div>
-            </a>
-          </div>
+                    <div class="gallery-item" data-category="debut">
+                        <a href="album-debut-1.html" title="View Gladys' Debut Album">
+                             <img src="https://placehold.co/600x400/fecaca/1f2937?text=Gladys%27+Debut"
+                                 onerror="this.onerror=null; this.src='https://placehold.co/400x300/cccccc/ffffff?text=Image+Not+Found';"
+                                 alt="Gladys' Debut Album Cover">
+                             <div class="album-title-container">
+                                 <h3>Gladys' Debut</h3>
+                                 <p>Mandaue City</p>
+                             </div>
+                        </a>
+                    </div>
 
-          <!-- 4. Gabrielle's Debut -->
-          <div class="gallery-item" data-category="debut">
-            <a href="Debut/gabrielle_debut.html" title="View Gabrielle's Debut Album">
-              <img src="https://placehold.co/600x400/fecaca/1f2937?text=Gabrielle%27s+Debut"
-                   onerror="this.onerror=null; this.src='https://placehold.co/400x300/cccccc/ffffff?text=Image+Not+Found';" 
-                   alt="Gabrielle's Debut Album Cover">
-              <div class="album-title-container">
-                <h3>Gabrielle's Debut</h3>
-                <p>Mandaue City</p>
-              </div>
-            </a>
-          </div>
+                    <div class="gallery-item" data-category="prenup">
+                        <a href="album-prenup-1.html" title="View Beach Prenup Album">
+                             <img src="https://placehold.co/600x400/bfdbfe/1f2937?text=Beach+Prenup"
+                                 onerror="this.onerror=null; this.src='https://placehold.co/400x300/cccccc/ffffff?text=Image+Not+Found';"
+                                 alt="Beach Prenup Album Cover">
+                            <div class="album-title-container">
+                                 <h3>Beach Prenup Session</h3>
+                                 <p>Panglao Island</p>
+                             </div>
+                        </a>
+                    </div>
 
-          <!-- 5. Annabelle's Debut -->
-          <div class="gallery-item" data-category="debut">
-            <a href="Debut/annabelle_debut.html" title="View Annabelle's Debut Album">
-              <img src="https://placehold.co/600x400/fecaca/1f2937?text=Annabelle%27s+Debut"
-                   onerror="this.onerror=null; this.src='https://placehold.co/400x300/cccccc/ffffff?text=Image+Not+Found';" 
-                   alt="Annabelle's Debut Album Cover">
-              <div class="album-title-container">
-                <h3>Annabelle's Debut</h3>
-                <p>Mandaue City</p>
-              </div>
-            </a>
-          </div>
+                    <div class="gallery-item" data-category="corporate">
+                        <a href="album-corporate-1.html" title="View Tech Conference Album">
+                             <img src="https://placehold.co/600x400/fed7aa/1f2937?text=Tech+Conference"
+                                 onerror="this.onerror=null; this.src='https://placehold.co/400x300/cccccc/ffffff?text=Image+Not+Found';"
+                                 alt="Tech Conference Album Cover">
+                             <div class="album-title-container">
+                                 <h3>Tech Conference 2025</h3>
+                                 <p>Cebu City</p>
+                             </div>
+                        </a>
+                    </div>
 
-          <!-- 6. Juliette's Debut -->
-          <div class="gallery-item" data-category="debut">
-            <a href="Debut/juliette_debut.html" title="View Juliette's Debut Album">
-              <img src="https://placehold.co/600x400/fecaca/1f2937?text=Juliette%27s+Debut"
-                   onerror="this.onerror=null; this.src='https://placehold.co/400x300/cccccc/ffffff?text=Image+Not+Found';" 
-                   alt="Juliette's Debut Album Cover">
-              <div class="album-title-container">
-                <h3>Juliette's Debut</h3>
-                <p>Mandaue City</p>
-              </div>
-            </a>
-          </div>
+                    <div class="gallery-item" data-category="portraits">
+                        <a href="album-portraits-1.html" title="View Studio Portraits Album">
+                             <img src="https://placehold.co/600x400/d1fae5/1f2937?text=Studio+Portraits"
+                                 onerror="this.onerror=null; this.src='https://placehold.co/400x300/cccccc/ffffff?text=Image+Not+Found';"
+                                 alt="Studio Portraits Album Cover">
+                             <div class="album-title-container">
+                                 <h3>Studio Portrait Series</h3>
+                                 <p>Various Clients</p>
+                             </div>
+                        </a>
+                    </div>
 
-          <!-- 7. Veronica's Debut -->
-          <div class="gallery-item" data-category="debut">
-            <a href="Debut/veronica_debut.html" title="View Veronica's Debut Album">
-              <img src="https://placehold.co/600x400/fecaca/1f2937?text=Veronica%27s+Debut"
-                   onerror="this.onerror=null; this.src='https://placehold.co/400x300/cccccc/ffffff?text=Image+Not+Found';" 
-                   alt="Veronica's Debut Album Cover">
-              <div class="album-title-container">
-                <h3>Veronica's Debut</h3>
-                <p>Mandaue City</p>
-              </div>
-            </a>
-          </div>
+                    <div class="gallery-item" data-category="landscape">
+                        <a href="album-landscape-1.html" title="View Mountain Landscapes Album">
+                             <img src="https://placehold.co/600x400/e0e7ff/1f2937?text=Mountain+Vistas"
+                                 onerror="this.onerror=null; this.src='https://placehold.co/400x300/cccccc/ffffff?text=Image+Not+Found';"
+                                 alt="Mountain Landscapes Album Cover">
+                            <div class="album-title-container">
+                                 <h3>Mountain Landscapes</h3>
+                                 <p>Central Visayas</p>
+                             </div>
+                        </a>
+                    </div>
 
-          <!-- 8. Cassandra's Debut -->
-          <div class="gallery-item" data-category="debut">
-            <a href="cassandra_debut.html" title="View Cassandra's Debut Album">
-              <img src="https://placehold.co/600x400/fecaca/1f2937?text=Cassandra%27s+Debut"
-                   onerror="this.onerror=null; this.src='https://placehold.co/400x300/cccccc/ffffff?text=Image+Not+Found';" 
-                   alt="Cassandra's Debut Album Cover">
-              <div class="album-title-container">
-                <h3>Cassandra's Debut</h3>
-                <p>Mandaue City</p>
-              </div>
-            </a>
-          </div>
+                     <div class="gallery-item" data-category="video">
+                        <a href="album-video-1.html" title="View Wedding Film Album">
+                             <img src="https://placehold.co/600x400/fef3c7/1f2937?text=Wedding+Film"
+                                 onerror="this.onerror=null; this.src='https://placehold.co/400x300/cccccc/ffffff?text=Image+Not+Found';"
+                                 alt="Wedding Film Album Cover">
+                             <div class="album-title-container">
+                                 <h3>Highlights Wedding Film</h3>
+                                 <p>Videography</p>
+                             </div>
+                        </a>
+                    </div>
 
-          <!-- 9. Lily's Debut -->
-          <div class="gallery-item" data-category="debut">
-            <a href="Debut/lily_debut.html" title="View Lily's Debut Album">
-              <img src="https://placehold.co/600x400/fecaca/1f2937?text=Lily%27s+Debut"
-                   onerror="this.onerror=null; this.src='https://placehold.co/400x300/cccccc/ffffff?text=Image+Not+Found';" 
-                   alt="Lily's Debut Album Cover">
-              <div class="album-title-container">
-                <h3>Lily's Debut</h3>
-                <p>Mandaue City</p>
-              </div>
-            </a>
-          </div>
+                     <div class="gallery-item" data-category="wedding">
+                        <a href="album-wedding-2.html" title="View Mark & Anna's Wedding Album">
+                             <img src="https://placehold.co/600x400/a7f3d0/1f2937?text=Mark+%26+Anna"
+                                 onerror="this.onerror=null; this.src='https://placehold.co/400x300/cccccc/ffffff?text=Image+Not+Found';"
+                                 alt="Mark & Anna Wedding Album Cover">
+                            <div class="album-title-container">
+                                 <h3>Mark & Anna's Wedding</h3>
+                                 <p>Cebu City</p>
+                             </div>
+                        </a>
+                    </div>
 
-          <!-- 10. Olivia's Debut -->
-          <div class="gallery-item" data-category="debut">
-            <a href="Debut/olivia_debut.html" title="View Olivia's Debut Album">
-              <img src="https://placehold.co/600x400/fecaca/1f2937?text=Olivia%27s+Debut"
-                   onerror="this.onerror=null; this.src='https://placehold.co/400x300/cccccc/ffffff?text=Image+Not+Found';" 
-                   alt="Olivia's Debut Album Cover">
-              <div class="album-title-container">
-                <h3>Olivia's Debut</h3>
-                <p>Mandaue City</p>
-              </div>
-            </a>
-          </div>
-          <!-- End of Debut Items -->
+                     <div class="gallery-item" data-category="portraits">
+                        <a href="album-portraits-2.html" title="View Outdoor Portraits Album">
+                             <img src="https://placehold.co/600x400/d1fae5/1f2937?text=Outdoor+Portraits"
+                                 onerror="this.onerror=null; this.src='https://placehold.co/400x300/cccccc/ffffff?text=Image+Not+Found';"
+                                 alt="Outdoor Portraits Album Cover">
+                             <div class="album-title-container">
+                                 <h3>Outdoor Portraits</h3>
+                                 <p>Nature Sessions</p>
+                             </div>
+                        </a>
+                    </div>
 
-          <!-- Prenup: Beach Prenup -->
-          <div class="gallery-item" data-category="prenup">
-            <a href="album-prenup-1.html" title="View Beach Prenup Album">
-              <img src="https://placehold.co/600x400/bfdbfe/1f2937?text=Beach+Prenup"
-                   onerror="this.onerror=null; this.src='https://placehold.co/400x300/cccccc/ffffff?text=Image+Not+Found';" 
-                   alt="Beach Prenup Album Cover">
-              <div class="album-title-container">
-                <h3>Beach Prenup Session</h3>
-                <p>Panglao Island</p>
-              </div>
-            </a>
-          </div>
-
-          <!-- Corporate: Tech Conference -->
-          <div class="gallery-item" data-category="corporate">
-            <a href="album-corporate-1.html" title="View Tech Conference Album">
-              <img src="https://placehold.co/600x400/fed7aa/1f2937?text=Tech+Conference"
-                   onerror="this.onerror=null; this.src='https://placehold.co/400x300/cccccc/ffffff?text=Image+Not+Found';" 
-                   alt="Tech Conference Album Cover">
-              <div class="album-title-container">
-                <h3>Tech Conference 2025</h3>
-                <p>Cebu City</p>
-              </div>
-            </a>
-          </div>
-
-                    <!-- Landscape: Mountain Landscapes -->
-          <div class="gallery-item" data-category="landscape">
-            <a href="album-landscape-1.html" title="View Mountain Landscapes Album">
-              <img src="https://placehold.co/600x400/e0e7ff/1f2937?text=Mountain+Vistas"
-                   onerror="this.onerror=null; this.src='https://placehold.co/400x300/cccccc/ffffff?text=Image+Not+Found';" 
-                   alt="Mountain Landscapes Album Cover">
-              <div class="album-title-container">
-                <h3>Mountain Landscapes</h3>
-                <p>Central Visayas</p>
-              </div>
-            </a>
-          </div>
-
-          <!-- Portraits: Studio Portraits -->
-          <div class="gallery-item" data-category="portraits">
-            <a href="album-portraits-1.html" title="View Studio Portraits Album">
-              <img src="https://placehold.co/600x400/d1fae5/1f2937?text=Studio+Portraits"
-                   onerror="this.onerror=null; this.src='https://placehold.co/400x300/cccccc/ffffff?text=Image+Not+Found';" 
-                   alt="Studio Portraits Album Cover">
-              <div class="album-title-container">
-                <h3>Studio Portrait Series</h3>
-                <p>Various Clients</p>
-              </div>
-            </a>
-          </div>
-
-
-          <!-- Video: Wedding Film -->
-          <div class="gallery-item" data-category="video">
-            <a href="Wedding/album-video-1.html" title="View Wedding Film Album">
-              <img src="https://placehold.co/600x400/fef3c7/1f2937?text=Wedding+Film"
-                   onerror="this.onerror=null; this.src='https://placehold.co/400x300/cccccc/ffffff?text=Image+Not+Found';" 
-                   alt="Wedding Film Album Cover">
-              <div class="album-title-container">
-                <h3>Highlights Wedding Film</h3>
-                <p>Videography</p>
-              </div>
-            </a>
-          </div>
-
-          <!-- Wedding: Mark & Anna -->
-          <div class="gallery-item" data-category="wedding">
-            <a href="Wedding/album-wedding-2.html" title="View Mark &amp; Anna's Wedding Album">
-              <img src="https://placehold.co/600x400/a7f3d0/1f2937?text=Mark+%26+Anna"
-                   onerror="this.onerror=null; this.src='https://placehold.co/400x300/cccccc/ffffff?text=Image+Not+Found';" 
-                   alt="Mark &amp; Anna Wedding Album Cover">
-              <div class="album-title-container">
-                <h3>Mark &amp; Anna's Wedding</h3>
-                <p>Cebu City</p>
-              </div>
-            </a>
-          </div>
-
-          <!-- Portraits: Outdoor Portraits -->
-          <div class="gallery-item" data-category="portraits">
-            <a href="album-portraits-2.html" title="View Outdoor Portraits Album">
-              <img src="https://placehold.co/600x400/d1fae5/1f2937?text=Outdoor+Portraits"
-                   onerror="this.onerror=null; this.src='https://placehold.co/400x300/cccccc/ffffff?text=Image+Not+Found';" 
-                   alt="Outdoor Portraits Album Cover">
-              <div class="album-title-container">
-                <h3>Outdoor Portraits</h3>
-                <p>Nature Sessions</p>
-              </div>
-            </a>
-          </div>
-
-          
-          </div>
-
-          <!-- Additional Wedding Albums -->
+                   <!-- Additional Wedding Albums -->
           <!-- 1. Alex & Jessica's Wedding -->
           <div class="gallery-item" data-category="wedding">
             <a href="Wedding/alex-jessica-wedding.html" title="View Alex &amp; Jessica's Wedding Album">
@@ -429,140 +281,38 @@
             </a>
           </div>
 
-        <!-- Landscape: Mountain Landscapes Albums -->
-<div class="gallery-container">
+                     <div class="gallery-item" data-category="landscape">
+                        <a href="album-landscape-2.html" title="View Coastal Landscapes Album">
+                             <img src="https://placehold.co/600x400/e0e7ff/1f2937?text=Coastal+Scenes"
+                                 onerror="this.onerror=null; this.src='https://placehold.co/400x300/cccccc/ffffff?text=Image+Not+Found';"
+                                 alt="Coastal Landscapes Album Cover">
+                            <div class="album-title-container">
+                                 <h3>Coastal Landscapes</h3>
+                                 <p>Bohol Coastline</p>
+                             </div>
+                        </a>
+                    </div>
 
-  <!-- Kandungaw Peak -->
-  <div class="gallery-item" data-category="landscape">
-    <a href="Landscapes/kandungaw.html" title="View Kandungaw Peak Album">
-      <img src="https://placehold.co/600x400/e0e7ff/1f2937?text=Kandungaw+Peak"
-           onerror="this.onerror=null; this.src='https://placehold.co/400x300/cccccc/ffffff?text=Image+Not+Found';" 
-           alt="Kandungaw Peak Album Cover">
-      <div class="album-title-container">
-        <h3>Kandungaw Peak</h3>
-        <p>Central Visayas</p>
-      </div>
-    </a>
-  </div>
+                    </div> </div>
+        </section>
+    </main>
 
-  <!-- Mt. Manunggal -->
-  <div class="gallery-item" data-category="landscape">
-    <a href="Landscapes/mt-manunggal.html" title="View Mt. Manunggal Album">
-      <img src="https://placehold.co/600x400/e0e7ff/1f2937?text=Mt+Manunggal"
-           onerror="this.onerror=null; this.src='https://placehold.co/400x300/cccccc/ffffff?text=Image+Not+Found';" 
-           alt="Mt. Manunggal Album Cover">
-      <div class="album-title-container">
-        <h3>Mt. Manunggal</h3>
-        <p>Central Visayas</p>
-      </div>
-    </a>
-  </div>
+    <footer id="main-footer">
+        <div class="container footer-container">
+            <div class="footer-links">
+                 <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a>
+            </div>
+            <div class="social-links">
+                 <a href="https://www.facebook.com/nomar.sellhtrow.7/" aria-label="Facebook">FB</a> | <a href="https://www.instagram.com/ramsy.tariao/" aria-label="Instagram">IG</a> | <a href="#" aria-label="YouTube">YT</a>
+            </div>
+            <div class="copyright">
+                 © <span id="year"></span> RF Gallardo. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
 
-  <!-- Mt. Hambubuyog -->
-  <div class="gallery-item" data-category="landscape">
-    <a href="Landscapes/mt-hambubuyog.html" title="View Mt. Hambubuyog Album">
-      <img src="https://placehold.co/600x400/e0e7ff/1f2937?text=Mt+Hambubuyog"
-           onerror="this.onerror=null; this.src='https://placehold.co/400x300/cccccc/ffffff?text=Image+Not+Found';" 
-           alt="Mt. Hambubuyog Album Cover">
-      <div class="album-title-container">
-        <h3>Mt. Hambubuyog</h3>
-        <p>Central Visayas</p>
-      </div>
-    </a>
-  </div>
+    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
 
-  <!-- Mt. Lanaya -->
-  <div class="gallery-item" data-category="landscape">
-    <a href="Landscapes/mt-lanaya.html" title="View Mt. Lanaya Album">
-      <img src="https://placehold.co/600x400/e0e7ff/1f2937?text=Mt+Lanaya"
-           onerror="this.onerror=null; this.src='https://placehold.co/400x300/cccccc/ffffff?text=Image+Not+Found';" 
-           alt="Mt. Lanaya Album Cover">
-      <div class="album-title-container">
-        <h3>Mt. Lanaya</h3>
-        <p>Central Visayas</p>
-      </div>
-    </a>
-  </div>
-
-  <!-- Mt. Naupa -->
-  <div class="gallery-item" data-category="landscape">
-    <a href="Landscapes/mt-naupa.html" title="View Mt. Naupa Album">
-      <img src="https://placehold.co/600x400/e0e7ff/1f2937?text=Mt+Naupa"
-           onerror="this.onerror=null; this.src='https://placehold.co/400x300/cccccc/ffffff?text=Image+Not+Found';" 
-           alt="Mt. Naupa Album Cover">
-      <div class="album-title-container">
-        <h3>Mt. Naupa</h3>
-        <p>Central Visayas</p>
-      </div>
-    </a>
-  </div>
-
-  <!-- Lake Lhuillier -->
-  <div class="gallery-item" data-category="landscape">
-    <a href="Landscapes/lake-lhuillier.html" title="View Lake Lhuillier Album">
-      <img src="https://placehold.co/600x400/e0e7ff/1f2937?text=Lake+Lhuillier"
-           onerror="this.onerror=null; this.src='https://placehold.co/400x300/cccccc/ffffff?text=Image+Not+Found';" 
-           alt="Lake Lhuillier Album Cover">
-      <div class="album-title-container">
-        <h3>Lake Lhuillier</h3>
-        <p>Central Visayas</p>
-      </div>
-    </a>
-  </div>
-
-  <!-- Mt. Mago -->
-  <div class="gallery-item" data-category="landscape">
-    <a href="Landscapes/mt-mago.html" title="View Mt. Mago Album">
-      <img src="https://placehold.co/600x400/e0e7ff/1f2937?text=Mt+Mago"
-           onerror="this.onerror=null; this.src='https://placehold.co/400x300/cccccc/ffffff?text=Image+Not+Found';" 
-           alt="Mt. Mago Album Cover">
-      <div class="album-title-container">
-        <h3>Mt. Mago</h3>
-        <p>Central Visayas</p>
-      </div>
-    </a>
-  </div>
-
-  <!-- Lake Bensis -->
-  <div class="gallery-item" data-category="landscape">
-    <a href="Landscapes/lake-bensis.html" title="View Lake Bensis Album">
-      <img src="https://placehold.co/600x400/e0e7ff/1f2937?text=Lake+Bensis"
-           onerror="this.onerror=null; this.src='https://placehold.co/400x300/cccccc/ffffff?text=Image+Not+Found';" 
-           alt="Lake Bensis Album Cover">
-      <div class="album-title-container">
-        <h3>Lake Bensis</h3>
-        <p>Central Visayas</p>
-      </div>
-    </a>
-  </div>
-
-</div>
-
-
-
-        </div> <!-- End of Gallery Grid -->
-      </div>
-    </section>
-  </main>
-
-  <footer id="main-footer">
-    <div class="container footer-container">
-      <div class="footer-links">
-        <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
-      </div>
-      <div class="social-links">
-        <a href="https://www.facebook.com/nomar.sellhtrow.7/" aria-label="Facebook">FB</a> | 
-        <a href="https://www.instagram.com/ramsy.tariao/" aria-label="Instagram">IG</a> | 
-        <a href="#" aria-label="YouTube">YT</a>
-      </div>
-      <div class="copyright">
-        © <span id="year"></span> RF Gallardo. All Rights Reserved.
-      </div>
-    </div>
-  </footer>
-
-  <!-- External Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
